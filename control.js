@@ -24,11 +24,11 @@ var sequenceId  = rth.sequenceId();
 // Fetch initial parameters described in CartesianReadout3D.spv 
 var xRes = SB.readout["<Cartesian Readout>.xRes"];
 var yRes = SB.readout["<Cartesian Readout>.yRes"];
-var zRes = SB.readout["<Phase Encode Gradient>.res"];
+var zRes = SB.readout["<Phase Encode Gradient>.res"]; // Now this is 16
 
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "xSize", xRes));
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "ySize", yRes));
-rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "zSize", zRes));
+rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "zSize", zRes)); //8cm
 
 // Get minimum TR
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
@@ -42,7 +42,7 @@ var startingFOV = SB.readout["<Cartesian Readout>.fov"]; // cm
 
 // Slice thickness depends on SlabSelect.spv
 // In SpinBench, SliceThickness is defined in mm. 
-var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // mm
+var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // 80 mm
 
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10; // mm
