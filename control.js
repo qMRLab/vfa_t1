@@ -83,8 +83,9 @@ function changeFOV(fov){
 
   // Update FOV
   
+
   // Scale gradients (x,y,z) assuming in-plane isometry
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",scale,scale,startingThickness/sliceThickness()));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",scale,scale,startingThickness/ sliceThickness() ));
 
   // Waveforms are not affected by the below: 
   rth.addCommand(new RthUpdateChangeResolutionCommand(sequenceId,startingResolution/scale));
@@ -97,9 +98,6 @@ function changeFOV(fov){
   fieldOfView = fov;
 }
 
-function sliceThickness() {
-  return controlWidget.inputWidget_SliceThickness.value;
-}
 
 
 function changeSliceThickness(thickness){
@@ -237,3 +235,6 @@ var loopCommands = [updateGroup1, updateGroup2];
 
 rth.setLoopCommands(sequenceId, "tiploop", loopCommands);
 
+function sliceThickness() {
+  return controlWidget.inputWidget_SliceThickness.value;
+}
