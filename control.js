@@ -98,13 +98,13 @@ function changeFOV(fov){
 }
 
 function changeSliceThickness(thickness){
-  if (thickness < startingThickness) thickness = startingThickness;
+  if (thickness > startingThickness) thickness = startingThickness;
 
   // Scale SS gradient
   // Always referenced with respect to the beginning value described by the SB. 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",1,1,startingThickness/thickness));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",1,1,thickness/startingThickness));
   // Scale Gz in readout as well 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,1,startingThickness/thickness));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,1,thickness/startingThickness));
 
   rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fieldOfView*10,fieldOfView*10,thickness));
   // Update info 
