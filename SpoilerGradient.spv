@@ -78,7 +78,7 @@
 				<key>xRiseOverlap</key>
 				<real>1</real>
 				<key>y0Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>yFallOverlap</key>
 				<real>1</real>
 				<key>yPlateauOverlap</key>
@@ -86,7 +86,7 @@
 				<key>yRiseOverlap</key>
 				<real>1</real>
 				<key>z0Component</key>
-				<real>0.0</real>
+				<real>1</real>
 				<key>zFallOverlap</key>
 				<real>1</real>
 				<key>zPlateauOverlap</key>
@@ -120,7 +120,7 @@
 	<key>absoluteTime</key>
 	<real>0.62914997339248657</real>
 	<key>activeInspector</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -160,9 +160,9 @@
 		<key>width</key>
 		<integer>1056</integer>
 		<key>x</key>
-		<integer>1475</integer>
+		<integer>1667</integer>
 		<key>y</key>
-		<integer>-79</integer>
+		<integer>-93</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
