@@ -105,9 +105,9 @@ function changeSliceThickness(thickness){
 
   // Scale SS gradient
   // Always referenced with respect to the beginning value described by the SB. 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",1,1,thickness/startingThickness));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",startingFOV/fieldOfView,startingFOV/fieldOfView,thickness/startingThickness));
   // Scale Gz in readout as well 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,1,thickness/startingThickness));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",startingFOV/fieldOfView,startingFOV/fieldOfView,thickness/startingThickness));
 
   rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fieldOfView*10,fieldOfView*10,thickness));
   // Update info 
