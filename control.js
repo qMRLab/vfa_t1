@@ -42,7 +42,7 @@ var startingFOV = SB.readout["<Cartesian Readout>.fov"]; // cm
 
 // Slice thickness depends on SlabSelect.spv
 // In SpinBench, SliceThickness is defined in mm. 
-var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // 80 mm
+var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // 40 mm
 
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10; // mm
