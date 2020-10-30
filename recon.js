@@ -37,9 +37,9 @@ function reconBlock(input) {
   
   this.sort.setPhaseEncodes(256);
   this.sort.setSamples(256);
-  this.sort.setSliceEncodes(5);
+  this.sort.setSliceEncodes(16);
 
-  this.sort.setAccumulate(256*5);
+  this.sort.setAccumulate(256*16);
 
   this.sort.setInput(input);
 

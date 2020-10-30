@@ -46,7 +46,7 @@ var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // 8
 
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10; // mm
-var startingZResolution = startingThickness/zRes * 10; // At the beginning zFOV equaled to slice thickness of SS
+var startingZResolution = startingThickness/zRes; // At the beginning zFOV equaled to slice thickness of SS
 
 var startingTE = 3; //ms
 // Start of TE is anchored to the tip of sinc RF.
