@@ -87,7 +87,7 @@ function changeFOV(fov){
 
   // Waveforms are not affected by the below: 
   rth.addCommand(new RthUpdateChangeResolutionCommand(sequenceId,startingResolution/scale));
-  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10));
+  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,startingThickness,fov*10));
 
   // Annotation
   displayTools.setFOV(fov * 10);
@@ -97,14 +97,15 @@ function changeFOV(fov){
 }
 
 function changeSliceThickness(thickness){
-  if (thickness < startingThickness) thickness = startingThickness;
+  if (thickness > startingThickness) thickness = startingThickness;
 
   // Scale SS gradient
   // Always referenced with respect to the beginning value described by the SB. 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",1,1,startingThickness/thickness));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",1,startingThickness/thickness,1));
   // Scale Gz in readout as well 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,1,startingThickness/thickness));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,startingThickness/thickness,1));
 
+  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,thickness, fov*10));
   // Update info 
   rth.addCommand(new RthUpdateChangeSliceThicknessCommand(sequenceId, thickness));
 
@@ -169,7 +170,7 @@ function changeTE(te)
   inputWidget_TR  (Done)
 */
 
-controlWidget.inputWidget_SliceThickness.minimum = startingThickness;
+controlWidget.inputWidget_SliceThickness.minimum = 5;
 controlWidget.inputWidget_SliceThickness.maximum = startingThickness*2;
 controlWidget.inputWidget_SliceThickness.value   = startingThickness;
 
@@ -209,6 +210,9 @@ changeFlipAngle2(controlWidget.inputWidget_FA2.value);
 
 controlWidget.inputWidget_TE.valueChanged.connect(changeTE);
 changeTE(controlWidget.inputWidget_TE.value);
+
+controlWidget.inputWidget_SliceThickness.valueChanged.connect(changeSliceThickness);
+changeSliceThickness(controlWidget.inputWidget_SliceThickness.value);
 
 // Add loop commands
 
