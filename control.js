@@ -78,13 +78,13 @@ var displayTools = new RthDisplayThreePlaneTools();
 // Change functions
 
 function changeFOV(fov){
-  if (fov<startingFOV) fov = startingFOV; // Dont allow smaller FOV
+  if (fov<startingFOV) fov = startingFOV; 
   var scale = startingFOV/fov;
 
   // Update FOV
   
   // Scale gradients (x,y,z) assuming in-plane isometry
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",scale,scale,1));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",scale,scale,startingThickness/sliceThickness()));
 
   // Waveforms are not affected by the below: 
   rth.addCommand(new RthUpdateChangeResolutionCommand(sequenceId,startingResolution/scale));
@@ -96,6 +96,11 @@ function changeFOV(fov){
   // Update
   fieldOfView = fov;
 }
+
+function sliceThickness() {
+  return controlWidget.inputWidget_SliceThickness.value;
+}
+
 
 function changeSliceThickness(thickness){
   if (thickness > startingThickness) thickness = startingThickness;
@@ -177,7 +182,7 @@ controlWidget.inputWidget_SliceThickness.maximum = startingThickness*2;
 controlWidget.inputWidget_SliceThickness.value   = startingThickness;
 
 controlWidget.inputWidget_FOV.minimum = 20;
-controlWidget.inputWidget_FOV.maximum = startingFOV*2;
+controlWidget.inputWidget_FOV.maximum = startingFOV;
 controlWidget.inputWidget_FOV.value   = startingFOV;
 
 controlWidget.inputWidget_TR.minimum = minTR;
