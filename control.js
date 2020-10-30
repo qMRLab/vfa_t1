@@ -105,7 +105,7 @@ function changeSliceThickness(thickness){
   // Scale Gz in readout as well 
   rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,startingThickness/thickness,1));
 
-  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,thickness, fov*10));
+  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fieldOfView*10,thickness, fieldOfView*10));
   // Update info 
   rth.addCommand(new RthUpdateChangeSliceThicknessCommand(sequenceId, thickness));
 
