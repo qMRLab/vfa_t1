@@ -98,7 +98,7 @@ function changeFOV(fov){
 }
 
 function changeSliceThickness(thickness){
-  if (thickness > startingThickness) thickness = startingThickness;
+  if (thickness < startingThickness) thickness = startingThickness;
 
   // Scale SS gradient
   // Always referenced with respect to the beginning value described by the SB. 
