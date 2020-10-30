@@ -180,7 +180,7 @@ controlWidget.inputWidget_SliceThickness.maximum = startingThickness*2;
 controlWidget.inputWidget_SliceThickness.value   = startingThickness;
 
 controlWidget.inputWidget_FOV.minimum = 20;
-controlWidget.inputWidget_FOV.maximum = startingFOV;
+controlWidget.inputWidget_FOV.maximum = startingFOV*2;
 controlWidget.inputWidget_FOV.value   = startingFOV;
 
 controlWidget.inputWidget_TR.minimum = minTR;
