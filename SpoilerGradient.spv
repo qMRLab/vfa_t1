@@ -57,16 +57,14 @@
 					<key>position</key>
 					<real>0.0</real>
 				</dict>
+				<key>area</key>
+				<real>10</real>
 				<key>editableName</key>
-				<string>Plateau Trapezoid</string>
-				<key>maxVal</key>
-				<real>4</real>
-				<key>plateauDuration</key>
-				<real>0.20000000298023224</real>
+				<string>Area Trapezoid</string>
 				<key>pluginClass</key>
-				<string>SBPlateauTrapezoid</string>
+				<string>SBAreaTrapezoid</string>
 				<key>pluginName</key>
-				<string>Plateau Trapezoid</string>
+				<string>Area Trapezoid</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
@@ -156,13 +154,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>919</integer>
+		<integer>738</integer>
 		<key>width</key>
 		<integer>1056</integer>
 		<key>x</key>
-		<integer>1667</integer>
+		<integer>129</integer>
 		<key>y</key>
-		<integer>-93</integer>
+		<integer>38</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -192,7 +190,7 @@
 			<key>showYValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>587</real>
+			<real>406</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -220,11 +218,11 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>145.140625</real>
+			<real>33.328125</real>
 			<key>viewHeight</key>
-			<real>426.34375</real>
+			<real>426</real>
 			<key>viewLeft</key>
-			<real>13.98828125</real>
+			<real>12.765625</real>
 			<key>viewWidth</key>
 			<real>612.91015625</real>
 		</dict>
@@ -240,7 +238,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>102.76171875</real>
+			<real>-78.5</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -260,7 +258,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>692</real>
+			<real>511</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -304,7 +302,7 @@
 	<key>timeWithinTr</key>
 	<real>0.62914997339248657</real>
 	<key>tr</key>
-	<real>1.123760461807251</real>
+	<real>1.2836059331893921</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
