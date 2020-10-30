@@ -28,7 +28,7 @@ var zRes = SB.readout["<Phase Encode Gradient>.res"]; // Now this is 16
 
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "xSize", xRes));
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "ySize", yRes));
-rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "zSize", zRes)); //8cm
+rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "zSize", zRes)); //16
 
 // Get minimum TR
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
@@ -46,6 +46,7 @@ var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // 8
 
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10; // mm
+// Unused 
 var startingZResolution = startingThickness/zRes; // At the beginning zFOV equaled to slice thickness of SS
 
 var startingTE = 3; //ms
@@ -87,7 +88,7 @@ function changeFOV(fov){
 
   // Waveforms are not affected by the below: 
   rth.addCommand(new RthUpdateChangeResolutionCommand(sequenceId,startingResolution/scale));
-  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,startingThickness,fov*10));
+  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,fov*10,startingThickness));
 
   // Annotation
   displayTools.setFOV(fov * 10);
@@ -101,11 +102,11 @@ function changeSliceThickness(thickness){
 
   // Scale SS gradient
   // Always referenced with respect to the beginning value described by the SB. 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",1,startingThickness/thickness,1));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",1,1,startingThickness/thickness));
   // Scale Gz in readout as well 
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,startingThickness/thickness,1));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",1,1,startingThickness/thickness));
 
-  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fieldOfView*10,thickness, fieldOfView*10));
+  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fieldOfView*10,fieldOfView*10,thickness));
   // Update info 
   rth.addCommand(new RthUpdateChangeSliceThicknessCommand(sequenceId, thickness));
 
@@ -113,6 +114,7 @@ function changeSliceThickness(thickness){
 
   displayTools.setSliceThickness(thickness);
   rth.informationInsert(sequenceId,"mri.SliceThickness",thickness);
+  rth.informationInsert(sequenceId,"mri.RandomField",thickness*2);
   sliceThickness = thickness;
 
 }
