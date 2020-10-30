@@ -94,7 +94,7 @@
 				<key>y0Component</key>
 				<real>0.0</real>
 				<key>y1Component</key>
-				<real>0.0</real>
+				<real>1</real>
 				<key>yPostReadoutOverlap</key>
 				<real>1</real>
 				<key>yPreReadoutOverlap</key>
@@ -106,7 +106,7 @@
 				<key>z0Component</key>
 				<real>0.0</real>
 				<key>z1Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>zPostReadoutOverlap</key>
 				<real>1</real>
 				<key>zPreReadoutOverlap</key>
@@ -143,11 +143,11 @@
 				<key>xDurationOverlap</key>
 				<real>1</real>
 				<key>y0Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>yDurationOverlap</key>
 				<real>1</real>
 				<key>z0Component</key>
-				<real>0.0</real>
+				<real>1</real>
 				<key>zDurationOverlap</key>
 				<real>1</real>
 			</dict>
@@ -180,11 +180,11 @@
 				<key>xDurationOverlap</key>
 				<real>1</real>
 				<key>y0Component</key>
-				<real>-1</real>
+				<real>0.0</real>
 				<key>yDurationOverlap</key>
 				<real>1</real>
 				<key>z0Component</key>
-				<real>0.0</real>
+				<real>-1</real>
 				<key>zDurationOverlap</key>
 				<real>1</real>
 			</dict>
@@ -284,7 +284,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>1</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -482,7 +482,7 @@
 			<key>xWaveform</key>
 			<string>kx</string>
 			<key>yWaveform</key>
-			<string>kz</string>
+			<string>ky</string>
 		</dict>
 	</array>
 	<key>protonDensity</key>
