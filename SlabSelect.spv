@@ -55,7 +55,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.3428877592086792</real>
+					<real>1.4818716049194336</real>
 				</dict>
 				<key>duration</key>
 				<real>2.5</real>
@@ -74,7 +74,7 @@
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>timeBandwidth</key>
-				<real>4.0060000419616699</real>
+				<real>10</real>
 				<key>tip</key>
 				<real>20</real>
 				<key>window</key>
@@ -99,7 +99,7 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>2.0774216651916504</real>
+				<real>5.4637432098388672</real>
 				<key>plateauDuration</key>
 				<real>2.5</real>
 				<key>plateauRefocusOffset</key>
@@ -117,7 +117,7 @@
 				<key>rfPulse</key>
 				<string>Sinc RF</string>
 				<key>tbw</key>
-				<real>4.0060000419616699</real>
+				<real>10</real>
 				<key>thickness</key>
 				<real>7.0172590996448925</real>
 				<key>x0Component</key>
@@ -171,7 +171,7 @@
 	<key>absoluteTime</key>
 	<real>3.1389310359954834</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -207,13 +207,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>699</integer>
+		<integer>683</integer>
 		<key>width</key>
-		<integer>1205</integer>
+		<integer>1158</integer>
 		<key>x</key>
 		<integer>0</integer>
 		<key>y</key>
-		<integer>39</integer>
+		<integer>67</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -243,7 +243,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>-151</real>
+			<real>-167</real>
 			<key>viewHeight</key>
 			<real>776</real>
 			<key>viewLeft</key>
@@ -271,7 +271,7 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>81.0078125</real>
+			<real>65</real>
 			<key>viewHeight</key>
 			<real>421</real>
 			<key>viewLeft</key>
@@ -291,7 +291,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>35</real>
+			<real>19</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -311,7 +311,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>472</real>
+			<real>456</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -355,7 +355,7 @@
 	<key>timeWithinTr</key>
 	<real>3.1389310359954834</real>
 	<key>tr</key>
-	<real>3.4531562328338623</real>
+	<real>4.6233868598937988</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
