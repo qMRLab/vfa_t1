@@ -70,7 +70,7 @@
 				<key>kyCoverage</key>
 				<real>1</real>
 				<key>netArea</key>
-				<real>0.0</real>
+				<real>-2</real>
 				<key>pluginClass</key>
 				<string>SBCartesianReadout</string>
 				<key>pluginName</key>
@@ -298,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -532,11 +532,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.7198486328125</real>
+	<real>1.9198486328125</real>
 	<key>tr</key>
-	<real>2.9960000514984131</real>
+	<real>3.3039999008178711</real>
 	<key>trNum</key>
-	<integer>266</integer>
+	<integer>240</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
