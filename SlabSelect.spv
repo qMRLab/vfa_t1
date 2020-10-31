@@ -20,11 +20,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>range</key>
-			<real>200</real>
+			<real>16.353462219238281</real>
 			<key>res</key>
 			<integer>114</integer>
 			<key>selectionStart</key>
-			<real>-25.3125</real>
+			<real>51.319683074951172</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -55,7 +55,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.290677547454834</real>
+					<real>1.5754204988479614</real>
 				</dict>
 				<key>duration</key>
 				<real>2.5</real>
@@ -99,7 +99,7 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>5.081355094909668</real>
+				<real>5.650841236114502</real>
 				<key>plateauDuration</key>
 				<real>2.5</real>
 				<key>plateauRefocusOffset</key>
@@ -119,7 +119,7 @@
 				<key>tbw</key>
 				<real>10</real>
 				<key>thickness</key>
-				<real>40</real>
+				<real>5</real>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xPlateauOverlap</key>
@@ -169,7 +169,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>2.6763114929199219</real>
+	<real>4.7997303009033203</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -207,13 +207,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>1012</integer>
+		<integer>699</integer>
 		<key>width</key>
-		<integer>1446</integer>
+		<integer>1205</integer>
 		<key>x</key>
-		<integer>1395</integer>
+		<integer>-79</integer>
 		<key>y</key>
-		<integer>-139</integer>
+		<integer>39</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -243,7 +243,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>162</real>
+			<real>-151</real>
 			<key>viewHeight</key>
 			<real>776</real>
 			<key>viewLeft</key>
@@ -271,11 +271,11 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>126.46484375</real>
+			<real>28.140625</real>
 			<key>viewHeight</key>
-			<real>420.9375</real>
+			<real>421</real>
 			<key>viewLeft</key>
-			<real>295.46484375</real>
+			<real>451.1171875</real>
 			<key>viewWidth</key>
 			<real>395.8046875</real>
 		</dict>
@@ -291,7 +291,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>348</real>
+			<real>35</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -311,7 +311,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>785</real>
+			<real>472</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -353,9 +353,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>2.6763114929199219</real>
+	<real>4.7997303009033203</real>
 	<key>tr</key>
-	<real>3.0362381935119629</real>
+	<real>5.4604997634887695</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
@@ -369,7 +369,7 @@
 	<key>yVelocity</key>
 	<real>0.0</real>
 	<key>zPosition</key>
-	<real>-25.3125</real>
+	<real>51.319683074951172</real>
 	<key>zVelocity</key>
 	<real>0.0</real>
 </dict>

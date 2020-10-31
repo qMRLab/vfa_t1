@@ -175,7 +175,7 @@ function changeTE(te)
   inputWidget_TR  (Done)
 */
 
-controlWidget.inputWidget_SliceThickness.minimum = 5;
+controlWidget.inputWidget_SliceThickness.minimum = 3;
 controlWidget.inputWidget_SliceThickness.maximum = startingThickness*2;
 controlWidget.inputWidget_SliceThickness.value   = startingThickness;
 
