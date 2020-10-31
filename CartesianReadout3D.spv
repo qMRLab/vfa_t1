@@ -275,6 +275,20 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 			</dict>
+			<dict>
+				<key>duration</key>
+				<real>1000</real>
+				<key>editableName</key>
+				<string>Preacquisitions</string>
+				<key>granularity</key>
+				<integer>1</integer>
+				<key>pluginClass</key>
+				<string>SBPreacquisitionPlugin</string>
+				<key>pluginName</key>
+				<string>Preacquisitions</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
 		</array>
 		<key>numGradAxes</key>
 		<integer>3</integer>
@@ -284,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -324,7 +338,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-193</integer>
+		<integer>0</integer>
 		<key>y</key>
 		<integer>39</integer>
 	</dict>

@@ -13,6 +13,7 @@ exclusiveRuns = 2
 [excitation]
 type = waveform
 file = SlabSelect.spv
+linearPhaseIncrement = 180
 quadraticPhaseIncrement = 117
  
 [echodelay]
