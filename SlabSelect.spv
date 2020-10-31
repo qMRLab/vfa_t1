@@ -55,7 +55,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.5754204988479614</real>
+					<real>1.3428877592086792</real>
 				</dict>
 				<key>duration</key>
 				<real>2.5</real>
@@ -74,7 +74,7 @@
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>timeBandwidth</key>
-				<real>10</real>
+				<real>4.0060000419616699</real>
 				<key>tip</key>
 				<real>20</real>
 				<key>window</key>
@@ -99,7 +99,7 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>5.650841236114502</real>
+				<real>2.0774216651916504</real>
 				<key>plateauDuration</key>
 				<real>2.5</real>
 				<key>plateauRefocusOffset</key>
@@ -117,9 +117,9 @@
 				<key>rfPulse</key>
 				<string>Sinc RF</string>
 				<key>tbw</key>
-				<real>10</real>
+				<real>4.0060000419616699</real>
 				<key>thickness</key>
-				<real>5</real>
+				<real>7.0172590996448925</real>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xPlateauOverlap</key>
@@ -169,9 +169,9 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>4.7997303009033203</real>
+	<real>3.1389310359954834</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -211,7 +211,7 @@
 		<key>width</key>
 		<integer>1205</integer>
 		<key>x</key>
-		<integer>-5</integer>
+		<integer>0</integer>
 		<key>y</key>
 		<integer>39</integer>
 	</dict>
@@ -271,11 +271,11 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>147.90234375</real>
+			<real>81.0078125</real>
 			<key>viewHeight</key>
 			<real>421</real>
 			<key>viewLeft</key>
-			<real>-127.57421875</real>
+			<real>23.09765625</real>
 			<key>viewWidth</key>
 			<real>395.8046875</real>
 		</dict>
@@ -353,9 +353,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>4.7997303009033203</real>
+	<real>3.1389310359954834</real>
 	<key>tr</key>
-	<real>5.4604997634887695</real>
+	<real>3.4531562328338623</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
