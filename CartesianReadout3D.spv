@@ -124,12 +124,12 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>0.9859999418258667</real>
+					<real>0.98600006103515625</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>1</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -166,7 +166,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>1</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -298,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
