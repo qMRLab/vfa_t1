@@ -37,13 +37,13 @@ var parameterList = scannerParameters.receivedData();
 
 var instanceName = rth.instanceName();
 
-RTHLOGGER_INFO(instanceName);
-RTHLOGGER_INFO("Minimum TR: " + minTR);
-RTHLOGGER_INFO("Heart Rate: " + parameterList[1]);
-RTHLOGGER_INFO("Num Pulses: " + parameterList[3]);
+RTHLOGGER_WARNING(instanceName);
+RTHLOGGER_WARNING("Minimum TR: " + minTR);
+RTHLOGGER_WARNING("Heart Rate: " + parameterList[1]);
+RTHLOGGER_WARNING("Num Pulses: " + parameterList[3]);
 for (var i = 0; i < parameterList[3]; i++) {
-  RTHLOGGER_INFO("StartTime[" + i + "]: " + parameterList[4 + 2 * i]);
-  RTHLOGGER_INFO("  EndTime[" + i + "]: " + parameterList[5 + 2 * i]);
+  RTHLOGGER_WARNING("StartTime[" + i + "]: " + parameterList[4 + 2 * i]);
+  RTHLOGGER_WARNING("  EndTime[" + i + "]: " + parameterList[5 + 2 * i]);
 }
 
 
@@ -75,6 +75,7 @@ var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10
 
 var minTE = SB.excitation['<Sinc RF>.end'] - SB.excitation['<Sinc RF>.peak'] + SB.readout['<Cartesian Readout>.readoutCenter'];
 var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
+RTHLOGGER_WARNING(startingTE);
 rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
 
 // Assume FA from SB as the smaller.
