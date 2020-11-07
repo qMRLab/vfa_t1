@@ -38,7 +38,6 @@ var parameterList = scannerParameters.receivedData();
 var instanceName = rth.instanceName();
 
 RTHLOGGER_WARNING(instanceName);
-RTHLOGGER_WARNING("Minimum TR: " + minTR);
 RTHLOGGER_WARNING("Heart Rate: " + parameterList[1]);
 RTHLOGGER_WARNING("Num Pulses: " + parameterList[3]);
 for (var i = 0; i < parameterList[3]; i++) {
@@ -61,6 +60,7 @@ var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
 var startingTR = minTR;
+RTHLOGGER_WARNING("Minimum TR: " + minTR);
 
 // Starting FOV also depends on CartesianReadout3D.spv
 // In SpinBench, FOV is defined in cm. 
