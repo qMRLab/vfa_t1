@@ -124,12 +124,12 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>0.98600006103515625</real>
+					<real>0.98600000143051147</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>1</real>
+				<real>0.60000002384185791</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -137,7 +137,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>2</integer>
+				<integer>3</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -166,7 +166,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>1</real>
+				<real>0.60000002384185791</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -174,7 +174,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>2</integer>
+				<integer>3</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -244,7 +244,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>2</integer>
+				<integer>3</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -298,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -334,13 +334,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>738</integer>
+		<integer>731</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1068</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>65</integer>
 		<key>y</key>
-		<integer>39</integer>
+		<integer>45</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -370,7 +370,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>406</real>
+			<real>399</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -398,7 +398,7 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>-5.5</real>
+			<real>-12.5</real>
 			<key>viewHeight</key>
 			<real>401.5</real>
 			<key>viewLeft</key>
@@ -418,7 +418,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-76</real>
+			<real>-83</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -438,7 +438,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>511</real>
+			<real>504</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -458,7 +458,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>420.5</real>
+			<real>413.5</real>
 			<key>viewHeight</key>
 			<real>253.5</real>
 			<key>viewLeft</key>
@@ -486,7 +486,7 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-137</real>
+			<real>-144</real>
 			<key>viewHeight</key>
 			<real>533</real>
 			<key>viewLeft</key>

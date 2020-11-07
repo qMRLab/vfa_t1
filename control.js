@@ -30,6 +30,28 @@ rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "xS
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "ySize", yRes));
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "zSize", zRes)); //16
 
+// Get the sequence parameters from the sequencer.
+var scannerParameters = new RthUpdateGetParametersCommand(sequenceId);
+rth.addCommand(scannerParameters);
+var parameterList = scannerParameters.receivedData();
+RTHLOGGER_INFO(instanceName);
+RTHLOGGER_INFO("Minimum TR: " + minTR);
+RTHLOGGER_INFO("Heart Rate: " + parameterList[1]);
+RTHLOGGER_INFO("Num Pulses: " + parameterList[3]);
+for (var i = 0; i < parameterList[3]; i++) {
+  RTHLOGGER_INFO("StartTime[" + i + "]: " + parameterList[4 + 2 * i]);
+  RTHLOGGER_INFO("  EndTime[" + i + "]: " + parameterList[5 + 2 * i]);
+}
+
+rth.addSeriesDescription(instanceName);
+rth.informationInsert(sequenceId, "mri.SequenceName", instanceName);
+rth.informationInsert(sequenceId, "mri.ScanningSequence", "GR");
+rth.informationInsert(sequenceId, "mri.SequenceVariant", "SS, SP");
+rth.informationInsert(sequenceId, "mri.ScanOptions", "");
+rth.informationInsert(sequenceId, "mri.MRAcquisitionType", "3D");
+rth.informationInsert(sequenceId, "mri.NumberOfAverages", 1);
+rth.informationInsert(sequenceId, "mri.EchoTrainLength", 1);
+
 // Get minimum TR
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
@@ -46,13 +68,10 @@ var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // 4
 
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10; // mm
-// Unused 
-var startingZResolution = startingThickness/zRes; // At the beginning zFOV equaled to slice thickness of SS
 
-var startingTE = 3; //ms
-// Start of TE is anchored to the tip of sinc RF.
-var peakLocation  = SB.excitation["<Sinc RF>.peak"];
-rth.informationInsert(sequenceId,"mri.EchoTime",startingTE + peakLocation);
+var minTE = SB.excitation('<Sinc RF>.end') - SB.excitation('<Sinc RF>.peak') + SB.readout['<Cartesian Readout>.readoutCenter'];
+var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
+rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
 
 // Assume FA from SB as the smaller.
 var startingFA2 = SB.excitation["<Sinc RF>.tip"]; //20
@@ -156,14 +175,13 @@ function changeFlipAngle2(angle2){
 
 function changeTE(te)
 {
-  te += peakLocation;
-  rth.informationInsert(sequenceId,"mri.EchoTime",te);
-
-  var value = te * 1000; // Convert to usec
-  rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "echodelay", "setDelay", "EchoTime", te));
-  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "EchoTime", te));
   
+  rth.informationInsert(sequenceId,"mri.EchoTime",te);
+  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "EchoTime", te));
 
+  var echoDelay = (te - minTE) * 1000; // Convert to usec
+  rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "echodelay", "setDelay", "", echoDelay));
+  
 }
 
 
@@ -196,9 +214,9 @@ controlWidget.inputWidget_FA2.minimum = startingFA1;
 controlWidget.inputWidget_FA2.maximum = startingFA1+5;
 controlWidget.inputWidget_FA2.value   = startingFA1;
 
-controlWidget.inputWidget_TE.minimum = 1;
+controlWidget.inputWidget_TE.minimum = minTE;
 controlWidget.inputWidget_TE.maximum = 8;
-controlWidget.inputWidget_TE.value   = 3;
+controlWidget.inputWidget_TE.value   = 5;
 
 
 controlWidget.inputWidget_FOV.valueChanged.connect(changeFOV);

@@ -18,7 +18,7 @@ quadraticPhaseIncrement = 117
  
 [echodelay]
 type = delay
-duration = 3000
+duration = 2000
 
 [readout]
 type = waveform
