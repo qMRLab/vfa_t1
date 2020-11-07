@@ -43,6 +43,7 @@ for (var i = 0; i < parameterList[3]; i++) {
   RTHLOGGER_INFO("  EndTime[" + i + "]: " + parameterList[5 + 2 * i]);
 }
 
+var instanceName = rth.instanceName();
 rth.addSeriesDescription(instanceName);
 rth.informationInsert(sequenceId, "mri.SequenceName", instanceName);
 rth.informationInsert(sequenceId, "mri.ScanningSequence", "GR");
