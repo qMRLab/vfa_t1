@@ -75,7 +75,7 @@ var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10
 
 var minTE = SB.excitation['<Sinc RF>.end'] - SB.excitation['<Sinc RF>.peak'] + SB.readout['<Cartesian Readout>.readoutCenter'];
 var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
-RTHLOGGER_WARNING(startingTE);
+RTHLOGGER_WARNING("OK" + startingTE);
 rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
 
 // Assume FA from SB as the smaller.
