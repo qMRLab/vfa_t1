@@ -73,7 +73,7 @@ var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // 4
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/SB.readout["<Cartesian Readout>.xRes"] * 10; // mm
 
-var minTE = SB.excitation('<Sinc RF>.end') - SB.excitation('<Sinc RF>.peak') + SB.readout['<Cartesian Readout>.readoutCenter'];
+var minTE = SB.excitation['<Sinc RF>.end'] - SB.excitation['<Sinc RF>.peak'] + SB.readout['<Cartesian Readout>.readoutCenter'];
 var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
 rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
 
