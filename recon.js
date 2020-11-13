@@ -33,16 +33,19 @@ observer.observeValueForKey("acquisition.samples", "samples");
 
 function reconBlock(input) {
 
-  this.sort = new RthReconRawToImageSort();
+  //this.sort = new RthReconRawToImageSort();
   
-  this.sort.setPhaseEncodes(256);
-  this.sort.setSamples(256);
-  this.sort.setSliceEncodes(5);
+  //this.sort.setPhaseEncodes(256);
+  //this.sort.setSamples(256);
+  //this.sort.setSliceEncodes(3);
 
-  this.sort.setAccumulate(256*5);
-
+  //this.sort.setAccumulate(256*3);
+  
+  this.sort = RthReconSort();
+  this.sort.setIndexKeys(["acquisition.index"]);
   this.sort.setInput(input);
-
+  this.sort.setExtent([256,256])
+  this.sort.setAccumulate(3*256); 
   this.fft = new RthReconImageFFT();
   this.fft.setInput(this.sort.output());
 

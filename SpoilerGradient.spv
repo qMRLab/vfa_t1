@@ -116,11 +116,11 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>2.7999999999999998</real>
+	<real>0.62914997339248657</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
-	<string>1.3.2</string>
+	<string>2.5.1</string>
 	<key>beginAtSS</key>
 	<integer>0</integer>
 	<key>chronaxie</key>
@@ -154,13 +154,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>662</integer>
+		<integer>738</integer>
 		<key>width</key>
-		<integer>727</integer>
+		<integer>1056</integer>
 		<key>x</key>
-		<integer>238</integer>
+		<integer>129</integer>
 		<key>y</key>
-		<integer>115</integer>
+		<integer>38</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -188,9 +188,9 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>showYValues</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>330</real>
+			<real>406</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -216,15 +216,15 @@
 			<key>showReadoutWindows</key>
 			<integer>0</integer>
 			<key>showValues</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>106</real>
+			<real>33.328125</real>
 			<key>viewHeight</key>
-			<real>214</real>
+			<real>426</real>
 			<key>viewLeft</key>
-			<real>25</real>
+			<real>12.765625</real>
 			<key>viewWidth</key>
-			<real>292</real>
+			<real>612.91015625</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -238,11 +238,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>58</real>
+			<real>-78.5</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
-			<real>1</real>
+			<real>75.046875</real>
 			<key>viewWidth</key>
 			<real>340</real>
 		</dict>
@@ -258,7 +258,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>435</real>
+			<real>511</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -300,7 +300,7 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>2.7999999999999998</real>
+	<real>0.62914997339248657</real>
 	<key>tr</key>
 	<real>1.2836059331893921</real>
 	<key>trNum</key>

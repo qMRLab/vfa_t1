@@ -60,7 +60,7 @@
 				<key>editableName</key>
 				<string>Cartesian Readout</string>
 				<key>fov</key>
-				<real>24</real>
+				<real>25.600000000000001</real>
 				<key>hasPhaseEncoding</key>
 				<integer>1</integer>
 				<key>hasRewinder</key>
@@ -70,7 +70,7 @@
 				<key>kyCoverage</key>
 				<real>1</real>
 				<key>netArea</key>
-				<real>0.0</real>
+				<real>-2</real>
 				<key>pluginClass</key>
 				<string>SBCartesianReadout</string>
 				<key>pluginName</key>
@@ -94,7 +94,7 @@
 				<key>y0Component</key>
 				<real>0.0</real>
 				<key>y1Component</key>
-				<real>0.0</real>
+				<real>1</real>
 				<key>yPostReadoutOverlap</key>
 				<real>1</real>
 				<key>yPreReadoutOverlap</key>
@@ -106,7 +106,7 @@
 				<key>z0Component</key>
 				<real>0.0</real>
 				<key>z1Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>zPostReadoutOverlap</key>
 				<real>1</real>
 				<key>zPreReadoutOverlap</key>
@@ -124,12 +124,12 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>1.0399999618530273</real>
+					<real>0.98600000143051147</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>24</real>
+				<real>0.60000002384185791</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -137,17 +137,17 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>5</integer>
+				<integer>3</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
 				<real>1</real>
 				<key>y0Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>yDurationOverlap</key>
 				<real>1</real>
 				<key>z0Component</key>
-				<real>0.0</real>
+				<real>1</real>
 				<key>zDurationOverlap</key>
 				<real>1</real>
 			</dict>
@@ -161,12 +161,12 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>2.0639998912811279</real>
+					<real>2.0099999904632568</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>24</real>
+				<real>0.60000002384185791</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -174,17 +174,17 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>5</integer>
+				<integer>3</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
 				<real>1</real>
 				<key>y0Component</key>
-				<real>-1</real>
+				<real>0.0</real>
 				<key>yDurationOverlap</key>
 				<real>1</real>
 				<key>z0Component</key>
-				<real>0.0</real>
+				<real>-1</real>
 				<key>zDurationOverlap</key>
 				<real>1</real>
 			</dict>
@@ -244,7 +244,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>5</integer>
+				<integer>3</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -272,6 +272,20 @@
 				<string>SBOverlayAllCombinationsPlugin</string>
 				<key>pluginName</key>
 				<string>Overlay Combinations</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>duration</key>
+				<real>1000</real>
+				<key>editableName</key>
+				<string>Preacquisitions</string>
+				<key>granularity</key>
+				<integer>1</integer>
+				<key>pluginClass</key>
+				<string>SBPreacquisitionPlugin</string>
+				<key>pluginName</key>
+				<string>Preacquisitions</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 			</dict>
@@ -320,13 +334,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>674</integer>
+		<integer>731</integer>
 		<key>width</key>
-		<integer>1162</integer>
+		<integer>1068</integer>
 		<key>x</key>
-		<integer>66</integer>
+		<integer>65</integer>
 		<key>y</key>
-		<integer>82</integer>
+		<integer>45</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -356,7 +370,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>342</real>
+			<real>399</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -384,13 +398,13 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>118</real>
+			<real>-12.5</real>
 			<key>viewHeight</key>
-			<real>214</real>
+			<real>401.5</real>
 			<key>viewLeft</key>
 			<real>25</real>
 			<key>viewWidth</key>
-			<real>292</real>
+			<real>383.41015625</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -404,11 +418,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>70</real>
+			<real>-83</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
-			<real>1</real>
+			<real>0.0</real>
 			<key>viewWidth</key>
 			<real>340</real>
 		</dict>
@@ -424,7 +438,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>447</real>
+			<real>504</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -444,19 +458,19 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>375.5</real>
+			<real>413.5</real>
 			<key>viewHeight</key>
-			<real>234.5</real>
+			<real>253.5</real>
 			<key>viewLeft</key>
 			<real>349.16015625</real>
 			<key>viewWidth</key>
-			<real>426.06640625</real>
+			<real>803.9921875</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
 			<string>k-Space Trajectory</string>
 			<key>magnification</key>
-			<real>1</real>
+			<real>0.28238701820373535</real>
 			<key>pluginClass</key>
 			<string>SBTrajectoryViewPlugin</string>
 			<key>pluginName</key>
@@ -468,17 +482,17 @@
 			<key>showAllTrs</key>
 			<integer>1</integer>
 			<key>showReadoutKSpace</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>36.5</real>
+			<real>-144</real>
 			<key>viewHeight</key>
-			<real>328</real>
+			<real>533</real>
 			<key>viewLeft</key>
-			<real>367.01953125</real>
+			<real>430.01953125</real>
 			<key>viewWidth</key>
-			<real>337.21875</real>
+			<real>526.2734375</real>
 			<key>xWaveform</key>
 			<string>kx</string>
 			<key>yWaveform</key>
@@ -518,11 +532,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>3.1198486328124999</real>
+	<real>1.9198486328125</real>
 	<key>tr</key>
-	<real>3.1040000915527344</real>
+	<real>3.3039999008178711</real>
 	<key>trNum</key>
-	<integer>255</integer>
+	<integer>240</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
