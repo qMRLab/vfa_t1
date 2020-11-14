@@ -70,7 +70,7 @@
 				<key>kyCoverage</key>
 				<real>1</real>
 				<key>netArea</key>
-				<real>-2</real>
+				<real>-1</real>
 				<key>pluginClass</key>
 				<string>SBCartesianReadout</string>
 				<key>pluginName</key>
@@ -137,7 +137,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -174,7 +174,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -244,7 +244,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>3</integer>
+				<integer>2</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -298,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -336,9 +336,9 @@
 		<key>height</key>
 		<integer>731</integer>
 		<key>width</key>
-		<integer>1068</integer>
+		<integer>1280</integer>
 		<key>x</key>
-		<integer>65</integer>
+		<integer>-167</integer>
 		<key>y</key>
 		<integer>45</integer>
 	</dict>
@@ -532,11 +532,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.9198486328125</real>
+	<real>1.3798486328124999</real>
 	<key>tr</key>
-	<real>3.3039999008178711</real>
+	<real>2.7320001125335693</real>
 	<key>trNum</key>
-	<integer>240</integer>
+	<integer>291</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
