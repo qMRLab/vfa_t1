@@ -110,7 +110,7 @@ function changeFOV(fov){
 
   // Scale gradients (x,y,z) assuming in-plane isometry
   rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",scale,scale, sliceThickness/startingThickness ));
-
+  RTHLOGGER_WARNING("SlTh scale from FOV change" + sliceThickness/startingThickness + "XY scale from FOV change" + scale);
   // Waveforms are not affected by the below: 
   rth.addCommand(new RthUpdateChangeResolutionCommand(sequenceId,startingResolution/scale));
   rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,fov*10,startingThickness));
@@ -130,8 +130,10 @@ function changeSliceThickness(thickness){
   // Scale SS gradient
   // Always referenced with respect to the beginning value described by the SB. 
   rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"excitation",startingFOV/fieldOfView,startingFOV/fieldOfView,thickness/startingThickness));
+  RTHLOGGER_WARNING("SlTh scale from ST change Excite" + thickness/startingThickness + "XY scale from ST change Excite" + startingFOV/fieldOfView);
   // Scale Gz in readout as well 
   rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",startingFOV/fieldOfView,startingFOV/fieldOfView,thickness/startingThickness));
+  RTHLOGGER_WARNING("SlTh scale from ST change Readout" + thickness/startingThickness + "XY scale from ST change REadout" + startingFOV/fieldOfView);
 
   rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fieldOfView*10,fieldOfView*10,thickness));
   // Update info 
@@ -141,7 +143,6 @@ function changeSliceThickness(thickness){
 
   displayTools.setSliceThickness(thickness);
   rth.informationInsert(sequenceId,"mri.SliceThickness",thickness);
-  rth.informationInsert(sequenceId,"mri.RandomField",thickness*2);
   sliceThickness = thickness;
 
 }
