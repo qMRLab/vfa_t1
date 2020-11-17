@@ -32,15 +32,16 @@ observer.observeValueForKey("acquisition.samples", "samples");
 
 
 function reconBlock(input) {
-
+  
+  var that  = this;
   this.sort = new RthReconRawToImageSort();
   
   this.sort.observeKeys(["acquisition.samples","reconstruction.phaseEncodes","reconstruction.partitions"]);
   this.sort.observedKeysChanged.connect(function(keys){
-    this.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
-    this.sort.setSamples(keys["acquisition.samples"]);
-    this.sort.setPhaseEncodes(keys["reconstruction.zPartitions"]);
-    this.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
+    that.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
+    that.sort.setSamples(keys["acquisition.samples"]);
+    that.sort.setPhaseEncodes(keys["reconstruction.zPartitions"]);
+    that.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
   });
 
   //this.sort = RthReconSort();
