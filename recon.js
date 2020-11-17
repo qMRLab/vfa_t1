@@ -98,7 +98,7 @@ imageExport.observeKeys([
   "mri.FlipAngle1",
   "mri.FlipAngle2",
   "mri.FlipAngle", // Belonging to the current loop
-  "mri.SliceThickness",
+  "mri.SliceThickness"
 ]);
 imageExport.observeKeysChanged.connect(function(keys){
 

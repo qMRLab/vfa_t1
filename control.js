@@ -29,7 +29,7 @@ var zPartitions = SB.readout["<Phase Encode Gradient>.res"]; // Number of partit
 // These values are changed in the SB only.
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, {
   phaseEncodes: phaseEncodes,
-  zPartitions: zPartitions,
+  zPartitions: zPartitions
 }));
 
 // Get the sequence parameters from the sequencer.
