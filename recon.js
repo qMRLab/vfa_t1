@@ -47,6 +47,7 @@ function reconBlock(input) {
   //this.sort = RthReconSort();
   //this.sort.setIndexKeys(["acquisition.index"]);
   this.sort.setInput(input);
+  this.sort.setUseSliceEncodeKey(false);
   this.sort.setSwapSePe(true);
   this.sort.observeKeys(["acquisition.slice", "acquisition.index"]);
   this.sort.observedKeysChanged.connect(function(keys){
