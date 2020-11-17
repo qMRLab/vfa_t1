@@ -78,45 +78,59 @@ observer.coilsChanged.connect(connectCoils);
 
 rth.importJS("lib:RthImageThreePlaneOutput.js");
 
-var date = new Date();
+function ExportBlock(input){
 
-//var imageExport = new RthReconToQmrlab();
-// This is a bit annoying, but the only option for now. 
-var imageExport = new RthReconImageExport();
-imageExport.observeKeys([
-  "mri.SequenceName",
-  "mri.ScanningSequence",
-  "mri.SequenceVariant",
-  "mri.MRAcquisitionType",
-  "mri.NumberOfCoils",
-  "mri.ExcitationTimeBandwidth",
-  "mri.ExcitationDuration",
-  "mri.ExcitationType",
-  "mri.VoxelSpacing",
-  "mri.EchoTime",
-  "mri.RepetitionTime",
-  "mri.FlipAngle1",
-  "mri.FlipAngle2",
-  "mri.FlipAngle", // Belonging to the current loop
-  "mri.SliceThickness"
-]);
-imageExport.observeKeysChanged.connect(function(keys){
+  var that = this;
 
-  imageExport.addTag("deneme",keys["mri.SequenceName"]);
-});
-var exportDirectory = "/home/agah/Desktop/AgahHV/";
-var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
-imageExport.objectName = "save_image";
+  var date = new Date();
+
+  //var imageExport = new RthReconToQmrlab();
+  // This is a bit annoying, but the only option for now. 
+  this.imageExport = new RthReconImageExport();
+  this.imageExport.observeKeys([
+    "mri.SequenceName",
+    "mri.ScanningSequence",
+    "mri.SequenceVariant",
+    "mri.MRAcquisitionType",
+    "mri.NumberOfCoils",
+    "mri.ExcitationTimeBandwidth",
+    "mri.ExcitationDuration",
+    "mri.ExcitationType",
+    "mri.VoxelSpacing",
+    "mri.EchoTime",
+    "mri.RepetitionTime",
+    "mri.FlipAngle1",
+    "mri.FlipAngle2",
+    "mri.FlipAngle", // Belonging to the current loop
+    "mri.SliceThickness"
+  ]);
+  this.imageExport.observeKeysChanged.connect(function(keys){
+    that.imageExport.addTag("deneme",keys["mri.SequenceName"]);
+  });
+  var exportDirectory = "/home/agah/Desktop/AgahHV/";
+  var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
+  this.imageExport.objectName = "save_image";
+  
+  this.imageExport.setInput(input);
+  this.imageExport.setFileName(exportFileName);
+  RTHLOGGER_WARNING("saving...");
+
+  this.imageExport.saveFileSeries(true);
+
+  // This is a sink node, hence no output.
+}
+
+
+
+
 
 var splitter = RthReconSplitter();
 splitter.objectName = "splitOutput";
 splitter.setInput(sos.output());
 
-imageExport.setFileName(exportFileName);
-RTHLOGGER_WARNING("saving...");
-
-imageExport.saveFileSeries(true);
 
 var threePlane = new RthImageThreePlaneOutput();
 threePlane.setInput(splitter.output(0));
-imageExport.setInput(splitter.output(1));
+
+var exporter  = new ExportBlock(splitter.output(1));
+exporter.setInput(splitter.output(1));
