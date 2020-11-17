@@ -53,6 +53,10 @@ function reconBlock(input) {
   //this.sort.observedKeysChanged.connect(function(keys){
     //RTHLOGGER_WARNING("Slice" + keys["acquisition.slice"] + "index" + keys["acquisition.index"]);
   //});
+  this.observeKeys(["acquisition.<Repeat 1>.index"]);
+  this.sort.observedKeysChanged.connect(function(keys){
+    RTHLOGGER_WARNING("Slice" + keys["acquisition.<Repeat 1>.index"]);
+  });
   //this.sort.setExtent([256,256])
   //this.sort.setAccumulate(2*256);
   this.fft = new RthReconImageFFT();
