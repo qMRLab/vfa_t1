@@ -111,7 +111,8 @@ function ExportBlock(input){
     var temp = keys["mri.SequenceName"];
     RTHLOGGER_WARNING("param" + temp);
     that.imageExport.addTag("mri.deneme",temp);
-    this.imageExport.addTag("agah",temp);
+    that.imageExport.addTag("agah",temp);
+    that.imageExport.addTag("another","manual");
   });
   var exportDirectory = "/home/agah/Desktop/AgahHV/";
   var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
