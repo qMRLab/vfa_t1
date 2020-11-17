@@ -36,7 +36,7 @@ function reconBlock(input) {
   this.sort = new RthReconRawToImageSort();
   
   this.sort.observeKeys(["acquisition.samples","reconstruction.phaseEncodes","reconstruction.partitions"]);
-  this.sort.observeKeysChanged.connect(function(keys){
+  this.sort.observedKeysChanged.connect(function(keys){
     this.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
     this.sort.setSamples(keys["acquisition.samples"]);
     this.sort.setPhaseEncodes(keys["reconstruction.zPartitions"]);
@@ -47,7 +47,7 @@ function reconBlock(input) {
   //this.sort.setIndexKeys(["acquisition.index"]);
   this.sort.setInput(input);
   this.sort.observeKeys(["acquisition.slice"]);
-  this.sort.observeKeysChanged.connect(function(keys){
+  this.sort.observedKeysChanged.connect(function(keys){
     RTHLOGGER_WARNING(keys["acquisition.slice"]);
   });
   //this.sort.setExtent([256,256])
