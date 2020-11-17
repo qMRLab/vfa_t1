@@ -43,6 +43,7 @@ RTHLOGGER_WARNING("Num Coils: " + parameterList[2]);
 
 rth.addSeriesDescription(instanceName);
 rth.informationInsert(sequenceId, "mri.SequenceName", "qMRLab " + instanceName);
+rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"mri.SequenceName", "qMRLab " + instanceName));
 rth.informationInsert(sequenceId, "mri.ScanningSequence", "GR");
 rth.informationInsert(sequenceId, "mri.SequenceVariant", "SS, SP");
 rth.informationInsert(sequenceId, "mri.ScanOptions", "");
