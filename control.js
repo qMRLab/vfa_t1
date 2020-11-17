@@ -138,7 +138,7 @@ function changeSliceThickness(thickness){
   rth.addCommand(new RthUpdateChangeSliceThicknessCommand(sequenceId, thickness));
   // zFOV is not equal to the slice thickness, it has a padding of 10mm. Not sure why, but this 
   // was the convention in other 3D waveforms I saw, so I followed. 
-  rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels],fieldOfView/phaseEncodes,(startingZFOV*thickness/startingThickness)/zPartitions*10]);
+  rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels,fieldOfView/phaseEncodes,(startingZFOV*thickness/startingThickness)/zPartitions*10]);
   sliceThickness = thickness;
 
 }
