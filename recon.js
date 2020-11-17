@@ -40,7 +40,7 @@ function reconBlock(input) {
   this.sort.observedKeysChanged.connect(function(keys){
     that.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
     that.sort.setSamples(keys["acquisition.samples"]);
-    that.sort.setPhaseEncodes(keys["reconstruction.zPartitions"]);
+    that.sort.setSliceEncodes(keys["reconstruction.zPartitions"]);
     that.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
   });
 
