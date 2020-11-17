@@ -106,7 +106,8 @@ function ExportBlock(input){
     "mri.SliceThickness"
   ]);
   this.imageExport.observedKeysChanged.connect(function(keys){
-    that.imageExport.addTag("deneme",keys["mri.SequenceName"]);
+    var temp = keys["mri.SequenceName"];
+    that.imageExport.addTag("deneme",temp);
   });
   var exportDirectory = "/home/agah/Desktop/AgahHV/";
   var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
