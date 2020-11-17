@@ -104,7 +104,7 @@ function ExportBlock(input){
     "mri.FlipAngle", // Belonging to the current loop
     "mri.SliceThickness"
   ]);
-  this.imageExport.observeKeysChanged.connect(function(keys){
+  this.imageExport.observedKeysChanged.connect(function(keys){
     that.imageExport.addTag("deneme",keys["mri.SequenceName"]);
   });
   var exportDirectory = "/home/agah/Desktop/AgahHV/";
