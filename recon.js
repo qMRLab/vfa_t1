@@ -133,4 +133,3 @@ var threePlane = new RthImageThreePlaneOutput();
 threePlane.setInput(splitter.output(0));
 
 var exporter  = new ExportBlock(splitter.output(1));
-exporter.setInput(splitter.output(1));
