@@ -47,10 +47,10 @@ function reconBlock(input) {
   //this.sort = RthReconSort();
   //this.sort.setIndexKeys(["acquisition.index"]);
   this.sort.setInput(input);
-  //this.sort.observeKeys(["acquisition.slice"]);
-  //this.sort.observedKeysChanged.connect(function(keys){
-  //  RTHLOGGER_WARNING(keys["acquisition.slice"]);
-  //});
+  this.sort.observeKeys(["acquisition.slice"]);
+  this.sort.observedKeysChanged.connect(function(keys){
+    RTHLOGGER_WARNING("Slice" + keys["acquisition.slice"]);
+  });
   //this.sort.setExtent([256,256])
   //this.sort.setAccumulate(2*256);
   this.fft = new RthReconImageFFT();
@@ -107,6 +107,7 @@ function ExportBlock(input){
   ]);
   this.imageExport.observedKeysChanged.connect(function(keys){
     var temp = keys["mri.SequenceName"];
+    RTHLOGGER_WARNING("param" + temp);
     that.imageExport.addTag("deneme",temp);
   });
   var exportDirectory = "/home/agah/Desktop/AgahHV/";
