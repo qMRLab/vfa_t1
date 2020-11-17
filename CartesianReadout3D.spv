@@ -70,7 +70,7 @@
 				<key>kyCoverage</key>
 				<real>1</real>
 				<key>netArea</key>
-				<real>-1</real>
+				<real>-1.5</real>
 				<key>pluginClass</key>
 				<string>SBCartesianReadout</string>
 				<key>pluginName</key>
@@ -298,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -334,13 +334,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>731</integer>
+		<integer>993</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1606</integer>
 		<key>x</key>
-		<integer>-167</integer>
+		<integer>267</integer>
 		<key>y</key>
-		<integer>45</integer>
+		<integer>27</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -370,7 +370,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>399</real>
+			<real>661</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -398,9 +398,9 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>-12.5</real>
+			<real>249</real>
 			<key>viewHeight</key>
-			<real>401.5</real>
+			<real>402</real>
 			<key>viewLeft</key>
 			<real>25</real>
 			<key>viewWidth</key>
@@ -418,7 +418,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-83</real>
+			<real>179</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -438,7 +438,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>504</real>
+			<real>766</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -458,13 +458,13 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>413.5</real>
+			<real>678.40234375</real>
 			<key>viewHeight</key>
-			<real>253.5</real>
+			<real>250.59765625</real>
 			<key>viewLeft</key>
 			<real>349.16015625</real>
 			<key>viewWidth</key>
-			<real>803.9921875</real>
+			<real>884.76953125</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -486,13 +486,13 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-144</real>
+			<real>31.5546875</real>
 			<key>viewHeight</key>
-			<real>533</real>
+			<real>675.52734375</real>
 			<key>viewLeft</key>
-			<real>430.01953125</real>
+			<real>493.55078125</real>
 			<key>viewWidth</key>
-			<real>526.2734375</real>
+			<real>602.90234375</real>
 			<key>xWaveform</key>
 			<string>kx</string>
 			<key>yWaveform</key>
@@ -532,11 +532,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.3798486328124999</real>
+	<real>0.7198486328125</real>
 	<key>tr</key>
-	<real>2.7320001125335693</real>
+	<real>2.9839999675750732</real>
 	<key>trNum</key>
-	<integer>291</integer>
+	<integer>266</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>

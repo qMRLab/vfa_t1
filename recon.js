@@ -35,17 +35,23 @@ function reconBlock(input) {
 
   this.sort = new RthReconRawToImageSort();
   
-  this.sort.setPhaseEncodes(256);
-  this.sort.setSamples(256);
-  this.sort.setSliceEncodes(2);
+  this.sort.observeKeys(["acquisition.samples","reconstruction.phaseEncodes","reconstruction.partitions"]);
+  this.sort.observeKeysChanged.connect(function(keys){
+    this.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
+    this.sort.setSamples(keys["acquisition.samples"]);
+    this.sort.setPhaseEncodes(keys["reconstruction.zPartitions"]);
+    this.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
+  });
 
-  this.sort.setAccumulate(256*2);
-  
   //this.sort = RthReconSort();
   //this.sort.setIndexKeys(["acquisition.index"]);
   this.sort.setInput(input);
+  this.sort.observeKeys(["acquisition.slice"]);
+  this.sort.observeKeysChanged.connect(function(keys){
+    RTHLOGGER_WARNING(keys["acquisition.slice"]);
+  });
   //this.sort.setExtent([256,256])
-  //this.sort.setAccumulate(2*256); 
+  //this.sort.setAccumulate(2*256);
   this.fft = new RthReconImageFFT();
   this.fft.setInput(this.sort.output());
 
@@ -75,7 +81,29 @@ rth.importJS("lib:RthImageThreePlaneOutput.js");
 var date = new Date();
 
 //var imageExport = new RthReconToQmrlab();
+// This is a bit annoying, but the only option for now. 
 var imageExport = new RthReconImageExport();
+imageExport.observeKeys([
+  "mri.SequenceName",
+  "mri.ScanningSequence",
+  "mri.SequenceVariant",
+  "mri.MRAcquisitionType",
+  "mri.NumberOfCoils",
+  "mri.ExcitationTimeBandwidth",
+  "mri.ExcitationDuration",
+  "mri.ExcitationType",
+  "mri.VoxelSpacing",
+  "mri.EchoTime",
+  "mri.RepetitionTime",
+  "mri.FlipAngle1",
+  "mri.FlipAngle2",
+  "mri.FlipAngle", // Belonging to the current loop
+  "mri.SliceThickness",
+]);
+imageExport.observeKeysChanged.connect(function(keys){
+
+  imageExport.addTag("deneme",keys["mri.SequenceName"]);
+});
 var exportDirectory = "/home/agah/Desktop/AgahHV/";
 var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
 imageExport.objectName = "save_image";
