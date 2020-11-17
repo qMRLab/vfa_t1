@@ -47,9 +47,9 @@ function reconBlock(input) {
   //this.sort = RthReconSort();
   //this.sort.setIndexKeys(["acquisition.index"]);
   this.sort.setInput(input);
-  this.sort.observeKeys(["acquisition.slice"]);
+  this.sort.observeKeys(["acquisition.slice", "acquisition.index"]);
   this.sort.observedKeysChanged.connect(function(keys){
-    RTHLOGGER_WARNING("Slice" + keys["acquisition.slice"]);
+    RTHLOGGER_WARNING("Slice" + keys["acquisition.slice"] + "index" + keys["acquisition.index"]);
   });
   //this.sort.setExtent([256,256])
   //this.sort.setAccumulate(2*256);
@@ -108,7 +108,8 @@ function ExportBlock(input){
   this.imageExport.observedKeysChanged.connect(function(keys){
     var temp = keys["mri.SequenceName"];
     RTHLOGGER_WARNING("param" + temp);
-    that.imageExport.addTag("deneme",temp);
+    that.imageExport.addTag("mri.deneme",temp);
+    this.imageExport.addTag("agah",temp);
   });
   var exportDirectory = "/home/agah/Desktop/AgahHV/";
   var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
@@ -122,9 +123,6 @@ function ExportBlock(input){
 
   // This is a sink node, hence no output.
 }
-
-
-
 
 
 var splitter = RthReconSplitter();
