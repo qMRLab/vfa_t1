@@ -55,7 +55,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.5754204988479614</real>
+					<real>1.5211837291717529</real>
 				</dict>
 				<key>duration</key>
 				<real>2.5</real>
@@ -99,7 +99,7 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>5.650841236114502</real>
+				<real>5.5423674583435059</real>
 				<key>plateauDuration</key>
 				<real>2.5</real>
 				<key>plateauRefocusOffset</key>
@@ -119,7 +119,7 @@
 				<key>tbw</key>
 				<real>10</real>
 				<key>thickness</key>
-				<real>5</real>
+				<real>6</real>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xPlateauOverlap</key>
@@ -355,7 +355,7 @@
 	<key>timeWithinTr</key>
 	<real>3.1389310359954834</real>
 	<key>tr</key>
-	<real>5.4604997634887695</real>
+	<real>4.9703221321105957</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
