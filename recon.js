@@ -34,33 +34,50 @@ observer.observeValueForKey("acquisition.samples", "samples");
 function reconBlock(input) {
   
   var that  = this;
-  this.sort = new RthReconRawToImageSort();
+  //this.sort = new RthReconRawToImageSort();
   
-  this.sort.observeKeys(["acquisition.samples","reconstruction.phaseEncodes","reconstruction.partitions"]);
-  this.sort.observedKeysChanged.connect(function(keys){
-    that.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
-    that.sort.setSamples(keys["acquisition.samples"]);
-    that.sort.setSliceEncodes(keys["reconstruction.zPartitions"]);
-    that.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
-  });
+  //this.sort.observeKeys(["acquisition.samples","reconstruction.phaseEncodes","reconstruction.partitions"]);
+  //this.sort.observedKeysChanged.connect(function(keys){
+   // that.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
+    //that.sort.setSamples(keys["acquisition.samples"]);
+    //that.sort.setSliceEncodes(keys["reconstruction.zPartitions"]);
+    //that.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
+  //});
+  
+ this.sort3d = new RthReconSort();
+ this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index", "acquisition.<Repeat 1>.index"]);
+ this.sort3d.setInput(input);
+ this.sort3d.observeKeys(["mri.RunNumber"]);
+ this.sort3d.observedKeysChanged.connect(
+  function(keys) {
+    that.sort3d.resetAccumulation();
+    var yEncodes = keys["reconstruction.phaseEncodes"];
+    var samples = keys["acquisition.samples"];
+    //var coils = keys["acquisition.channels"];
+    var zEncodes = keys["reconstruction.zPartitions"];
+    //this.sort3d.extent = [samples, coils, yEncodes, zEncodes]; // if the input is [samples x coils]
+    that.sort3d.extent = [samples, yEncodes, zEncodes]; // if the input is [samples]
+    that.sort3d.accumulate = yEncodes * zEncodes;
+  }
+);
 
   //this.sort = RthReconSort();
   //this.sort.setIndexKeys(["acquisition.index"]);
-  this.sort.setInput(input);
+  //this.sort.setInput(input);
   //this.sort.setUseSliceEncodeKey(false);
   //this.sort.setSwapSePe(true);
   //this.sort.observeKeys(["acquisition.slice", "acquisition.index"]);
   //this.sort.observedKeysChanged.connect(function(keys){
     //RTHLOGGER_WARNING("Slice" + keys["acquisition.slice"] + "index" + keys["acquisition.index"]);
   //});
-  this.sort.observeKeys(["acquisition.<Repeat 1>.index"]);
-  this.sort.observedKeysChanged.connect(function(keys){
-    RTHLOGGER_WARNING("Slice" + keys["acquisition.<Repeat 1>.index"]);
-  });
+  //this.sort.observeKeys(["acquisition.<Repeat 1>.index"]);
+  //this.sort.observedKeysChanged.connect(function(keys){
+  //  RTHLOGGER_WARNING("Slice" + keys["acquisition.<Repeat 1>.index"]);
+  //});
   //this.sort.setExtent([256,256])
   //this.sort.setAccumulate(2*256);
   this.fft = new RthReconImageFFT();
-  this.fft.setInput(this.sort.output());
+  this.fft.setInput(this.sort3d.output());
 
   this.output = function() {
   return this.fft.output();

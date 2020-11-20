@@ -70,7 +70,7 @@
 				<key>kyCoverage</key>
 				<real>1</real>
 				<key>netArea</key>
-				<real>-1.5</real>
+				<real>-2</real>
 				<key>pluginClass</key>
 				<string>SBCartesianReadout</string>
 				<key>pluginName</key>
@@ -277,7 +277,7 @@
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>1000</real>
+				<real>1</real>
 				<key>editableName</key>
 				<string>Preacquisitions</string>
 				<key>granularity</key>
@@ -298,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>798.7198486328125</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -334,13 +334,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>993</integer>
+		<integer>731</integer>
 		<key>width</key>
-		<integer>1606</integer>
+		<integer>1384</integer>
 		<key>x</key>
-		<integer>267</integer>
+		<integer>80</integer>
 		<key>y</key>
-		<integer>27</integer>
+		<integer>46</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -370,7 +370,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>661</real>
+			<real>399</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -398,7 +398,7 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>249</real>
+			<real>-13</real>
 			<key>viewHeight</key>
 			<real>402</real>
 			<key>viewLeft</key>
@@ -418,7 +418,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>179</real>
+			<real>-83</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -438,7 +438,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>766</real>
+			<real>504</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -458,9 +458,9 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>678.40234375</real>
+			<real>415.5</real>
 			<key>viewHeight</key>
-			<real>250.59765625</real>
+			<real>251</real>
 			<key>viewLeft</key>
 			<real>349.16015625</real>
 			<key>viewWidth</key>
@@ -486,9 +486,9 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>31.5546875</real>
+			<real>-230.5</real>
 			<key>viewHeight</key>
-			<real>675.52734375</real>
+			<real>675.5</real>
 			<key>viewLeft</key>
 			<real>493.55078125</real>
 			<key>viewWidth</key>
@@ -497,6 +497,26 @@
 			<string>kx</string>
 			<key>yWaveform</key>
 			<string>ky</string>
+		</dict>
+		<dict>
+			<key>editableName</key>
+			<string>Waveform Info</string>
+			<key>pluginClass</key>
+			<string>SBWaveformInfoPlugin</string>
+			<key>pluginName</key>
+			<string>Waveform Info</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>viewBottom</key>
+			<real>86.5</real>
+			<key>viewHeight</key>
+			<real>326</real>
+			<key>viewLeft</key>
+			<real>328.74609375</real>
+			<key>viewWidth</key>
+			<real>442.8671875</real>
 		</dict>
 	</array>
 	<key>protonDensity</key>
@@ -532,11 +552,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.7198486328125</real>
+	<real>1.9198486328125</real>
 	<key>tr</key>
-	<real>2.9839999675750732</real>
+	<real>3.3039999008178711</real>
 	<key>trNum</key>
-	<integer>266</integer>
+	<integer>240</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
