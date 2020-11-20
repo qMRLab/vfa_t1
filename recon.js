@@ -112,27 +112,43 @@ function ExportBlock(input){
   // This is a bit annoying, but the only option for now. 
   this.imageExport = new RthReconImageExport();
   this.imageExport.observeKeys([
-    "mri.SequenceName",
-    "mri.ScanningSequence",
-    "mri.SequenceVariant",
-    "mri.MRAcquisitionType",
+    //"mri.SequenceName",
+    //"mri.ScanningSequence",
+    //"mri.SequenceVariant",
+    //"mri.MRAcquisitionType",
     "mri.NumberOfCoils",
     "mri.ExcitationTimeBandwidth",
     "mri.ExcitationDuration",
-    "mri.ExcitationType",
+    //"mri.ExcitationType",
     "mri.VoxelSpacing",
     "mri.EchoTime",
     "mri.RepetitionTime",
     "mri.FlipAngle1",
     "mri.FlipAngle2",
     "mri.FlipAngle", // Belonging to the current loop
-    "mri.SliceThickness"
+    "mri.SliceThickness",
+    "reconstruction.phaseEncodes",
+    "acquisition.samples",
+    "reconstruction.zPartitions",
+    "mri.PreAcqDuration"
+
   ]);
   this.imageExport.observedKeysChanged.connect(function(keys){
-    var temp = keys["mri.SequenceName"];
-    that.imageExport.addTag("deneme",qsTr(temp) + "another string");
-    that.imageExport.addTag("agah",temp);
-    that.imageExport.addTag("another",qsTr("some string"));
+    that.imageExport.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
+    that.imageExport.addTag("ExcitationTimeBandwidth",keys["mri.ExcitationTimeBandwidth"]);
+    that.imageExport.addTag("ExcitationDuration",keys["mri.ExcitationDuration"]);
+    that.imageExport.addTag("SpacingX",keys["mri.VoxelSpacing"][0]);
+    that.imageExport.addTag("SpacingY",keys["mri.VoxelSpacing"][1]);
+    that.imageExport.addTag("SpacingZ",keys["mri.VoxelSpacing"][2]);
+    that.imageExport.addTag("EchoTime",keys["mri.EchoTime"]);
+    that.imageExport.addTag("RepetitionTime",keys["mri.RepetitionTime"]);
+    that.imageExport.addTag("FlipAngle1",keys["mri.FlipAngle1"]);
+    that.imageExport.addTag("FlipAngle2",keys["mri.FlipAngle2"]);
+    that.imageExport.addTag("FlipAngle",keys["mri.FlipAngle"]);
+    that.imageExport.addTag("SliceThickness",keys["mri.SliceThickness"]);
+    that.imageExport.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
+    that.imageExport.addTag("NumberOfColumns",keys["acquisition.samples"]);
+    that.imageExport.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
   });
   var exportDirectory = "/home/agah/Desktop/AgahHV/";
   var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';

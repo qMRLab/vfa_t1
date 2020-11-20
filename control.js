@@ -39,11 +39,9 @@ var parameterList = scannerParameters.receivedData();
 
 var instanceName = rth.instanceName();
 
-RTHLOGGER_WARNING("Num Coils: " + parameterList[2]);
-
 rth.addSeriesDescription(instanceName);
+
 rth.informationInsert(sequenceId, "mri.SequenceName", "qMRLab " + instanceName);
-rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"SequenceName", "qMRLab " + instanceName));
 rth.informationInsert(sequenceId, "mri.ScanningSequence", "GR");
 rth.informationInsert(sequenceId, "mri.SequenceVariant", "SS, SP");
 rth.informationInsert(sequenceId, "mri.ScanOptions", "");
@@ -75,7 +73,7 @@ var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // m
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/xPixels* 10; // mm
 
-rth.informationInsert(sequenceId,"mri.VoxelSpacing",[startingResolution,startingResolution,startingZFOV/zPartitions*10]);
+rth.informationInsert(sequenceId,"mri.VoxelSpacing",[startingResolution*10,startingResolution*10,startingZFOV/zPartitions*10]);
 // Specify TE delay interval 
 var minTE = SB.excitation['<Sinc RF>.end'] - SB.excitation['<Sinc RF>.peak'] + SB.readout['<Cartesian Readout>.readoutCenter'];
 var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
@@ -139,7 +137,7 @@ function changeSliceThickness(thickness){
   rth.addCommand(new RthUpdateChangeSliceThicknessCommand(sequenceId, thickness));
   // zFOV is not equal to the slice thickness, it has a padding of 10mm. Not sure why, but this 
   // was the convention in other 3D waveforms I saw, so I followed. 
-  rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels,fieldOfView/phaseEncodes,(startingZFOV*thickness/startingThickness)/zPartitions*10]);
+  rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,(startingZFOV*thickness/startingThickness)/zPartitions*10]);
   sliceThickness = thickness;
 
 }
@@ -195,6 +193,17 @@ function changeTE(te)
   inputWidget_FA2 (Done)
   inputWidget_TR  (Done)
 */
+
+// Send metadata to recon
+rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+  ExcitationTimeBandwidth: SB.excitation["<Sinc RF>.timeBandwidth"],
+  ExcitationDuration: SB.excitation["<Sinc RF>.duration"],
+  NumberOfCoils: parameterList[2],
+  FlipAngle1:flipAngle1,
+  FlipAngle2: flipAngle2,
+  PreAcqDuration: SB.readout["<Preacquisitions>.duration"]
+}));
+
 
 controlWidget.inputWidget_SliceThickness.minimum = startingThickness;
 controlWidget.inputWidget_SliceThickness.maximum = startingThickness*2;
