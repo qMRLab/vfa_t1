@@ -70,7 +70,7 @@
 				<key>kyCoverage</key>
 				<real>1</real>
 				<key>netArea</key>
-				<real>0.0</real>
+				<real>-3</real>
 				<key>pluginClass</key>
 				<string>SBCartesianReadout</string>
 				<key>pluginName</key>
@@ -164,48 +164,11 @@
 					<real>1.871999979019165</real>
 				</dict>
 				<key>editableName</key>
-				<string>Phase Encode Gradient 1</string>
-				<key>fov</key>
-				<real>0.60000002384185791</real>
-				<key>pluginClass</key>
-				<string>SBPhaseEncodeGradient</string>
-				<key>pluginName</key>
-				<string>Phase Encode Gradient</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>res</key>
-				<integer>2</integer>
-				<key>x0Component</key>
-				<real>0.0</real>
-				<key>xDurationOverlap</key>
-				<real>1</real>
-				<key>y0Component</key>
-				<real>0.0</real>
-				<key>yDurationOverlap</key>
-				<real>1</real>
-				<key>z0Component</key>
-				<real>-1</real>
-				<key>zDurationOverlap</key>
-				<real>1</real>
-			</dict>
-			<dict>
-				<key>anchor</key>
-				<dict>
-					<key>activeAnchor</key>
-					<string>start</string>
-					<key>anchorType</key>
-					<integer>1</integer>
-					<key>anchoredToSBKey</key>
-					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
-					<key>position</key>
-					<real>1.871999979019165</real>
-				</dict>
-				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>2.3094010353088379</real>
+				<real>0.5</real>
 				<key>plateauDuration</key>
-				<real>0.40000000596046448</real>
+				<real>0.60000002384185791</real>
 				<key>pluginClass</key>
 				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
@@ -264,7 +227,6 @@
 				<key>pluginNames</key>
 				<array>
 					<string>Phase Encode Gradient</string>
-					<string>Phase Encode Gradient 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -307,7 +269,6 @@
 				<key>pluginNames</key>
 				<array>
 					<string>Phase Encode Gradient</string>
-					<string>Phase Encode Gradient 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -345,9 +306,9 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>798.8826904296875</real>
+	<real>804.55419921875</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -389,7 +350,7 @@
 		<key>x</key>
 		<integer>0</integer>
 		<key>y</key>
-		<integer>29</integer>
+		<integer>45</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -559,11 +520,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>233.17578125</real>
+			<real>238.59375</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
-			<real>538.203125</real>
+			<real>599.15625</real>
 			<key>viewWidth</key>
 			<real>266</real>
 		</dict>
@@ -601,11 +562,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.82269042968749995</real>
+	<real>1.1541992187500001</real>
 	<key>tr</key>
-	<real>2.8053333759307861</real>
+	<real>2.5874700546264648</real>
 	<key>trNum</key>
-	<integer>283</integer>
+	<integer>309</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
