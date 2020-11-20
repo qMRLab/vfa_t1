@@ -64,13 +64,13 @@
 				<key>hasPhaseEncoding</key>
 				<integer>1</integer>
 				<key>hasRewinder</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>kxCoverage</key>
 				<real>1</real>
 				<key>kyCoverage</key>
 				<real>1</real>
 				<key>netArea</key>
-				<real>-2</real>
+				<real>0.0</real>
 				<key>pluginClass</key>
 				<string>SBCartesianReadout</string>
 				<key>pluginName</key>
@@ -188,6 +188,55 @@
 				<key>zDurationOverlap</key>
 				<real>1</real>
 			</dict>
+			<dict>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>start</string>
+					<key>anchorType</key>
+					<integer>1</integer>
+					<key>anchoredToSBKey</key>
+					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
+					<key>position</key>
+					<real>1.871999979019165</real>
+				</dict>
+				<key>editableName</key>
+				<string>Plateau Trapezoid</string>
+				<key>maxVal</key>
+				<real>2.3094010353088379</real>
+				<key>plateauDuration</key>
+				<real>0.40000000596046448</real>
+				<key>pluginClass</key>
+				<string>SBPlateauTrapezoid</string>
+				<key>pluginName</key>
+				<string>Plateau Trapezoid</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>x0Component</key>
+				<real>1</real>
+				<key>xFallOverlap</key>
+				<real>1</real>
+				<key>xPlateauOverlap</key>
+				<real>1</real>
+				<key>xRiseOverlap</key>
+				<real>1</real>
+				<key>y0Component</key>
+				<real>0.0</real>
+				<key>yFallOverlap</key>
+				<real>1</real>
+				<key>yPlateauOverlap</key>
+				<real>1</real>
+				<key>yRiseOverlap</key>
+				<real>1</real>
+				<key>z0Component</key>
+				<real>0.0</real>
+				<key>zFallOverlap</key>
+				<real>1</real>
+				<key>zPlateauOverlap</key>
+				<real>1</real>
+				<key>zRiseOverlap</key>
+				<real>1</real>
+			</dict>
 		</array>
 		<key>SequencePlugins</key>
 		<array>
@@ -296,9 +345,9 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>797.7213134765625</real>
+	<real>798.8826904296875</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -338,9 +387,9 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>36</integer>
+		<integer>0</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>29</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -552,11 +601,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>2.7213134765625</real>
+	<real>0.82269042968749995</real>
 	<key>tr</key>
-	<real>3.1600000858306885</real>
+	<real>2.8053333759307861</real>
 	<key>trNum</key>
-	<integer>250</integer>
+	<integer>283</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
