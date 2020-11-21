@@ -259,21 +259,21 @@ var acqLabel = "";
 function acqTextChanged(txt){
   acqLabel = txt;
   rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"AcquisitionBIDS",acqLabel));
-  RTHLOGGER_WARNING("Set ACQ: " + acqLabel);
+
 }
 
 var sesIndex = "";
 function sesTextChanged(txt){
   sesIndex = txt;
   rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"SessionBIDS",sesIndex));
-  RTHLOGGER_WARNING("Set ses: " + sesIndex);
+
 }
 
 var subIndex = "";
 function subTextChanged(txt){
   subIndex = txt;
   rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"SubjectBIDS",subIndex));
-  RTHLOGGER_WARNING("Set sub: " + subIndex);
+
 
 }
 
