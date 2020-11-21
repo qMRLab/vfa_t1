@@ -182,7 +182,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="subjectBIDS">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -190,15 +190,15 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>sub-&lt;value&gt;</string>
+        <string/>
        </property>
        <property name="placeholderText">
-        <string>sub-##</string>
+        <string>sub-&lt;index&gt;</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_2">
+      <widget class="QCheckBox" name="isSessionBIDS">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -208,10 +208,13 @@
        <property name="text">
         <string>Session</string>
        </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="sessionBIDS">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -227,7 +230,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="isAcqBIDS">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -240,7 +243,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="acqBIDS">
        <property name="enabled">
         <bool>false</bool>
        </property>
