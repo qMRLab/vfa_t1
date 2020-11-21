@@ -190,7 +190,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string/>
+        <string>00</string>
        </property>
        <property name="placeholderText">
         <string>sub-&lt;index&gt;</string>
@@ -225,6 +225,9 @@
         </sizepolicy>
        </property>
        <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
         <string>ses-&lt;value&gt;</string>
        </property>
       </widget>
@@ -254,6 +257,9 @@
         </sizepolicy>
        </property>
        <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
         <string>acq-&lt;label&gt;</string>
        </property>
       </widget>

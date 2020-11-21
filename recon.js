@@ -141,7 +141,11 @@ function ExportBlock(input){
     "geometry.QuaternionZ",
     "geometry.FieldOfViewX",
     "geometry.FieldOfViewY",
-    "geometry.FieldOfViewZ"
+    "geometry.FieldOfViewZ",
+    "mri.FlipIndex", // Ensured that this one will change per run.
+    "mri.SubjectBIDS",
+    "mri.SessionBIDS",
+    "mri.AcquisitionBIDS"  
   ]);
   this.imageExport.observedKeysChanged.connect(function(keys){
     that.imageExport.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
@@ -169,17 +173,38 @@ function ExportBlock(input){
     that.imageExport.addTag("FieldOfViewX",keys["geometry.FieldOfViewX"]);
     that.imageExport.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
     that.imageExport.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
+    that.imageExport.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
+    var exportDirectory = "/home/agah/Desktop/AgahHV/";
+    var flipIndex = keys["mri.FlipIndex"];
+    var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
+    var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
+    var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
+    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_flip-" + flipIndex + "_VFAT1.dat";
+    that.imageExport.setFileName(exportFileName);
+
   });
   
-  var exportDirectory = "/home/agah/Desktop/AgahHV/";
-  var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
+  //this.imageExport.observeKeys(["mri.RunNumber", // Ensured that this one will change per run.
+  //                              "mri.SubjectBIDS",
+  //                              "mri.SessionBIDS",
+  //                              "mri.AcquisitionBIDS"  
+  //]);
+  //this.imageExport.observedKeysChanged(function(keys){
+  //  var flipIndex = keys["mri.RunNumber"] + 1;
+  //  var subjectBIDS  = "sub-" + keys["mri.SessionBIDS"]; 
+  //  var sessionBIDS = (keys["mri.SessionBIDS"]!=="") ? "_ses-" + keys["mri.SessionBIDS"] : "";
+  //  var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]!=="") ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
+  //});
+
+  //var exportDirectory = "/home/agah/Desktop/AgahHV/";
+  //var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_flip-" + flipIndex + '_VFAT1.dat';
   this.imageExport.objectName = "save_image";
   
   this.imageExport.setInput(input);
-  this.imageExport.setFileName(exportFileName);
+  
   RTHLOGGER_WARNING("saving...");
 
-  this.imageExport.saveFileSeries(true);
+  //this.imageExport.saveFileSeries(true);
 
   // This is a sink node, hence no output.
 }

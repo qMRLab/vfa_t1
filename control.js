@@ -231,7 +231,69 @@ controlWidget.inputWidget_TE.maximum = 8;
 controlWidget.inputWidget_TE.value   = 5;
 
 
+function sessionClicked(chck){
+
+  if (chck){
+    controlWidget.sessionBIDS.enabled = true;
+    controlWidget.sessionBIDS.setText("00");
+  }else{
+    controlWidget.sessionBIDS.enabled = false;
+    controlWidget.sessionBIDS.text = "";
+    controlWidget.sessionBIDS.placeholderText = "_ses-<index>";
+  }
+}
+
+function acqClicked(chck){
+
+  if (chck){
+    controlWidget.acqBIDS.enabled = true;
+    controlWidget.acqBIDS.setText("freeform");
+  }else{
+    controlWidget.acqBIDS.enabled = false;
+    controlWidget.acqBIDS.text = "";
+    controlWidget.acqBIDS.placeholderText = "_acq-<label>";
+  }
+}
+
+var acqLabel = "";
+function acqTextChanged(txt){
+  acqLabel = txt;
+  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"AcquisitionBIDS",acqLabel));
+  RTHLOGGER_WARNING("Set ACQ: " + acqLabel);
+}
+
+var sesIndex = "";
+function sesTextChanged(txt){
+  sesIndex = txt;
+  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"SessionBIDS",sesIndex));
+  RTHLOGGER_WARNING("Set ses: " + sesIndex);
+}
+
+var subIndex = "";
+function subTextChanged(txt){
+  subIndex = txt;
+  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,"SubjectBIDS",subIndex));
+  RTHLOGGER_WARNING("Set sub: " + subIndex);
+
+}
+
 // Connect UI elements to the callback functions.
+
+controlWidget.acqBIDS.textChanged.connect(acqTextChanged);
+acqTextChanged(controlWidget.acqBIDS.text);
+
+controlWidget.sessionBIDS.textChanged.connect(sesTextChanged);
+sesTextChanged(controlWidget.sessionBIDS.text);
+
+controlWidget.subjectBIDS.textChanged.connect(subTextChanged);
+subTextChanged(controlWidget.subjectBIDS.text);
+
+controlWidget.isSessionBIDS.toggled.connect(sessionClicked);
+sessionClicked(controlWidget.isSessionBIDS.checked)
+
+controlWidget.isAcqBIDS.toggled.connect(acqClicked);
+acqClicked(controlWidget.isAcqBIDS.checked)
+
 controlWidget.inputWidget_FOV.valueChanged.connect(changeFOV);
 changeFOV(controlWidget.inputWidget_FOV.value);
 
@@ -256,8 +318,15 @@ var bigAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitatio
 // Following sets FlipAngle to 3 when FA1 = 30 and FA2=25 
 var smallAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", flipAngle2/flipAngle1);
 
-var infoCommand1 = new RthUpdateChangeMRIParameterCommand(sequenceId,"FlipAngle", flipAngle1);
-var infoCommand2 = new RthUpdateChangeMRIParameterCommand(sequenceId,"FlipAngle", flipAngle2);
+//rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+//  SubjectBIDS: controlWidget.subjectBIDS.text,
+//  SessionBIDS: controlWidget.sessionBIDS.text,
+//  AcquisitionBIDS: controlWidget.acqBIDS.text
+//}));
+
+
+var infoCommand1 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle1, FlipIndex: "01"});
+var infoCommand2 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle2, FlipIndex: "02"});
 
 var updateGroup1 = new RthUpdateGroup([bigAngleCommand, infoCommand1]);
 var updateGroup2 = new RthUpdateGroup([smallAngleCommand, infoCommand2]);
