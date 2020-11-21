@@ -112,6 +112,7 @@ function ExportBlock(input){
   // This is a bit annoying, but the only option for now. 
   this.imageExport = new RthReconImageExport();
   this.imageExport.observeKeys([
+    // For now, addTag does not support type string. 
     //"mri.SequenceName",
     //"mri.ScanningSequence",
     //"mri.SequenceVariant",
@@ -130,8 +131,17 @@ function ExportBlock(input){
     "reconstruction.phaseEncodes",
     "acquisition.samples",
     "reconstruction.zPartitions",
-    "mri.PreAcqDuration"
-
+    "mri.PreAcqDuration",
+    "geometry.TranslationX",
+    "geometry.TranslationY",
+    "geometry.TranslationZ",
+    "geometry.QuaternionW",
+    "geometry.QuaternionX",
+    "geometry.QuaternionY",
+    "geometry.QuaternionZ",
+    "geometry.FieldOfViewX",
+    "geometry.FieldOfViewY",
+    "geometry.FieldOfViewZ"
   ]);
   this.imageExport.observedKeysChanged.connect(function(keys){
     that.imageExport.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
@@ -149,7 +159,18 @@ function ExportBlock(input){
     that.imageExport.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
     that.imageExport.addTag("NumberOfColumns",keys["acquisition.samples"]);
     that.imageExport.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
+    that.imageExport.addTag("TranslationX",keys["geometry.TranslationX"]);
+    that.imageExport.addTag("TranslationY",keys["geometry.TranslationY"]);
+    that.imageExport.addTag("TranslationZ",keys["geometry.TranslationZ"]);
+    that.imageExport.addTag("QuaternionW",keys["geometry.QuaternionW"]);
+    that.imageExport.addTag("QuaternionX",keys["geometry.QuaternionX"]);
+    that.imageExport.addTag("QuaternionY",keys["geometry.QuaternionY"]);
+    that.imageExport.addTag("QuaternionZ",keys["geometry.QuaternionZ"]);
+    that.imageExport.addTag("FieldOfViewX",keys["geometry.FieldOfViewX"]);
+    that.imageExport.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
+    that.imageExport.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
   });
+  
   var exportDirectory = "/home/agah/Desktop/AgahHV/";
   var exportFileName  = exportDirectory + instanceName + date.getFullYear() + date.getMonth() + date.getSeconds() + '.dat';
   this.imageExport.objectName = "save_image";
