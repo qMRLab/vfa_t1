@@ -64,11 +64,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>8.4822673797607422</real>
+				<real>8.1242513656616211</real>
 				<key>plateauDuration</key>
 				<real>1.2170494985580442</real>
 				<key>plateauRefocusOffset</key>
-				<real>0.99751819797253638</real>
+				<real>0.95394589032133081</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -129,7 +129,7 @@
 				<key>enforceRFLimit</key>
 				<integer>1</integer>
 				<key>passbandRipple</key>
-				<real>-45</real>
+				<real>-60</real>
 				<key>pluginClass</key>
 				<string>SBSLRExcitation</string>
 				<key>pluginName</key>
@@ -143,7 +143,7 @@
 				<key>rfType</key>
 				<integer>1</integer>
 				<key>stopbandRipple</key>
-				<real>-60</real>
+				<real>-80</real>
 				<key>timeBandwidth</key>
 				<real>10</real>
 				<key>tip</key>
@@ -173,7 +173,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>1.5363765954971313</real>
+	<real>1.6499999761581421</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -213,9 +213,9 @@
 		<key>height</key>
 		<integer>729</integer>
 		<key>width</key>
-		<integer>1384</integer>
+		<integer>1280</integer>
 		<key>x</key>
-		<integer>-240</integer>
+		<integer>-225</integer>
 		<key>y</key>
 		<integer>48</integer>
 	</dict>
@@ -247,9 +247,9 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>58.37890625</real>
+			<real>58</real>
 			<key>viewHeight</key>
-			<real>577.93359375</real>
+			<real>578</real>
 			<key>viewLeft</key>
 			<real>616.1875</real>
 			<key>viewWidth</key>
@@ -275,9 +275,9 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>58.37890625</real>
+			<real>58</real>
 			<key>viewHeight</key>
-			<real>414.7421875</real>
+			<real>415</real>
 			<key>viewLeft</key>
 			<real>167.53515625</real>
 			<key>viewWidth</key>
@@ -335,11 +335,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>42.54296875</real>
+			<real>260.23046875</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
-			<real>462.03515625</real>
+			<real>278.86328125</real>
 			<key>viewWidth</key>
 			<real>266</real>
 		</dict>
@@ -377,9 +377,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.5363765954971313</real>
+	<real>1.6499999761581421</real>
 	<key>tr</key>
-	<real>1.6224744319915771</real>
+	<real>1.6443718671798706</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
