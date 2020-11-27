@@ -10,6 +10,10 @@ singleJSEngine = false
 continuous = 0
 exclusiveRuns = 2
 
+[mt]
+type=waveform
+file = fermiMT1200.spv
+
 [excitation]
 type = waveform
 file = SlabSelect.spv
