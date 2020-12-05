@@ -338,9 +338,9 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-53</integer>
+		<integer>0</integer>
 		<key>y</key>
-		<integer>29</integer>
+		<integer>45</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>

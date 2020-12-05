@@ -24,7 +24,7 @@
 			<key>res</key>
 			<integer>114</integer>
 			<key>selectionStart</key>
-			<real>51.319683074951172</real>
+			<real>-5.4823217391967773</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -193,7 +193,7 @@
 	<key>gradCoilHeatingGain</key>
 	<real>63</real>
 	<key>gradLimit</key>
-	<real>3.7999999999999998</real>
+	<real>2.2000000000000002</real>
 	<key>gradLimitXScale</key>
 	<real>1</real>
 	<key>gradLimitYScale</key>
@@ -369,7 +369,7 @@
 	<key>yVelocity</key>
 	<real>0.0</real>
 	<key>zPosition</key>
-	<real>51.319683074951172</real>
+	<real>-5.4823217391967773</real>
 	<key>zVelocity</key>
 	<real>0.0</real>
 </dict>
