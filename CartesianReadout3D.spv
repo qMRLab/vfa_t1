@@ -338,9 +338,9 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-53</integer>
+		<integer>-245</integer>
 		<key>y</key>
-		<integer>29</integer>
+		<integer>46</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -552,13 +552,13 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.56131347656249997</real>
+	<real>2.3133134765625001</real>
 	<key>tr</key>
 	<real>3.630000114440918</real>
 	<key>trNum</key>
 	<integer>219</integer>
 	<key>waveSamplingRate</key>
-	<real>50</real>
+	<real>250</real>
 	<key>xPosition</key>
 	<real>0.0</real>
 	<key>xVelocity</key>

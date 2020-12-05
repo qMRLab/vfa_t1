@@ -359,7 +359,7 @@
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
-	<real>100</real>
+	<real>250</real>
 	<key>xPosition</key>
 	<real>0.0</real>
 	<key>xVelocity</key>
