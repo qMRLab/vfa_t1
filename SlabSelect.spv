@@ -171,7 +171,7 @@
 	<key>absoluteTime</key>
 	<real>3.1389310359954834</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -193,7 +193,7 @@
 	<key>gradCoilHeatingGain</key>
 	<real>63</real>
 	<key>gradLimit</key>
-	<real>2.2000000000000002</real>
+	<real>3.7999999999999998</real>
 	<key>gradLimitXScale</key>
 	<real>1</real>
 	<key>gradLimitYScale</key>
@@ -211,9 +211,9 @@
 		<key>width</key>
 		<integer>1158</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>33</integer>
 		<key>y</key>
-		<integer>92</integer>
+		<integer>93</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>

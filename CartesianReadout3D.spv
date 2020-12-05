@@ -124,7 +124,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>1.0199999809265137</real>
+					<real>1.2960000038146973</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
@@ -161,7 +161,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>1.940000057220459</real>
+					<real>2.2160000801086426</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
@@ -298,7 +298,7 @@
 	<key>absoluteTime</key>
 	<real>797.7213134765625</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -320,7 +320,7 @@
 	<key>gradCoilHeatingGain</key>
 	<real>63</real>
 	<key>gradLimit</key>
-	<real>4</real>
+	<real>3.7999999999999998</real>
 	<key>gradLimitXScale</key>
 	<real>1</real>
 	<key>gradLimitYScale</key>
@@ -338,9 +338,9 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-114</integer>
+		<integer>-53</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>29</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -510,11 +510,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>233.17578125</real>
+			<real>222</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
-			<real>538.203125</real>
+			<real>483.58203125</real>
 			<key>viewWidth</key>
 			<real>266</real>
 		</dict>
@@ -534,7 +534,7 @@
 	<key>slewMagLimitZScale</key>
 	<real>0.0</real>
 	<key>slewRateLimit</key>
-	<real>15</real>
+	<real>10</real>
 	<key>slewRateLimitXScale</key>
 	<real>1</real>
 	<key>slewRateLimitXSlope</key>
@@ -552,11 +552,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.68131347656249996</real>
+	<real>0.56131347656249997</real>
 	<key>tr</key>
-	<real>3.2300000190734863</real>
+	<real>3.630000114440918</real>
 	<key>trNum</key>
-	<integer>246</integer>
+	<integer>219</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
