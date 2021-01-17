@@ -29,7 +29,8 @@ var instanceName = rth.instanceName();
 var observer = new RthReconRawObserver();
 observer.setSequenceId(sequenceId);
 observer.observeValueForKey("acquisition.samples", "samples");
-
+// Disable button after observer is discond
+observer.scanDisabled.connect(rth.deactivateScanButton);
 
 function reconBlock(input) {
   
