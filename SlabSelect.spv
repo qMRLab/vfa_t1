@@ -114,13 +114,13 @@
 				<key>anchor</key>
 				<dict>
 					<key>activeAnchor</key>
-					<string>start</string>
+					<string>peak</string>
 					<key>anchorType</key>
 					<integer>1</integer>
 					<key>anchoredToSBKey</key>
-					<string>startOfTR</string>
+					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>0.0</real>
+					<real>1.0683024196473778</real>
 				</dict>
 				<key>duration</key>
 				<real>1.2170494985580442</real>
@@ -215,7 +215,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-108</integer>
+		<integer>-78</integer>
 		<key>y</key>
 		<integer>48</integer>
 	</dict>
