@@ -64,11 +64,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>18.894721984863281</real>
+				<real>10.423930168151855</real>
 				<key>plateauDuration</key>
-				<real>2.3038972508907318</real>
+				<real>3</real>
 				<key>plateauRefocusOffset</key>
-				<real>2.1324349659078705</real>
+				<real>2.5890334613760912</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -82,9 +82,9 @@
 				<key>rfPulse</key>
 				<string>Sinc RF</string>
 				<key>tbw</key>
-				<real>20</real>
+				<real>12</real>
 				<key>thickness</key>
-				<real>40</real>
+				<real>48</real>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xPlateauOverlap</key>
@@ -120,10 +120,10 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>2.2207148747122942</real>
+					<real>2.6229314345766572</real>
 				</dict>
 				<key>duration</key>
-				<real>2.3038972508907318</real>
+				<real>3</real>
 				<key>editableName</key>
 				<string>Sinc RF</string>
 				<key>enforceRFLimit</key>
@@ -143,9 +143,9 @@
 				<key>rfType</key>
 				<integer>1</integer>
 				<key>stopbandRipple</key>
-				<real>-40</real>
+				<real>-50</real>
 				<key>timeBandwidth</key>
-				<real>20</real>
+				<real>12</real>
 				<key>tip</key>
 				<real>20</real>
 			</dict>
@@ -173,7 +173,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>3.3099966049194336</real>
+	<real>4.3099956512451172</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -215,7 +215,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-67</integer>
+		<integer>-179</integer>
 		<key>y</key>
 		<integer>47</integer>
 	</dict>
@@ -357,9 +357,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>3.3099966049194336</real>
+	<real>4.3099956512451172</real>
 	<key>tr</key>
-	<real>2.7563798427581787</real>
+	<real>3.3086731433868408</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
