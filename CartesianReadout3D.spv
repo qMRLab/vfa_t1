@@ -129,7 +129,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>6</real>
+				<real>5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -166,7 +166,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>6</real>
+				<real>5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -338,7 +338,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-402</integer>
+		<integer>-23</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
