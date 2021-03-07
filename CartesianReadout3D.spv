@@ -60,7 +60,7 @@
 				<key>editableName</key>
 				<string>Cartesian Readout</string>
 				<key>fov</key>
-				<real>23</real>
+				<real>24</real>
 				<key>hasPhaseEncoding</key>
 				<integer>1</integer>
 				<key>hasRewinder</key>
@@ -90,7 +90,7 @@
 				<key>xReadoutOverlap</key>
 				<real>0.0</real>
 				<key>xRes</key>
-				<integer>230</integer>
+				<integer>240</integer>
 				<key>y0Component</key>
 				<real>0.0</real>
 				<key>y1Component</key>
@@ -102,7 +102,7 @@
 				<key>yReadoutOverlap</key>
 				<real>0.0</real>
 				<key>yRes</key>
-				<integer>230</integer>
+				<integer>240</integer>
 				<key>z0Component</key>
 				<real>0.0</real>
 				<key>z1Component</key>
@@ -124,7 +124,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>1.0199999809265137</real>
+					<real>1.0060000419616699</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
@@ -161,7 +161,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>1.940000057220459</real>
+					<real>1.965999960899353</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
@@ -201,7 +201,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>230</integer>
+				<integer>240</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -298,9 +298,9 @@
 	<key>absoluteTime</key>
 	<real>797.7213134765625</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
-	<string>2.5.1</string>
+	<string>2.5.2</string>
 	<key>beginAtSS</key>
 	<integer>0</integer>
 	<key>chronaxie</key>
@@ -338,7 +338,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-114</integer>
+		<integer>-91</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
@@ -552,11 +552,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.68131347656249996</real>
+	<real>2.2813134765625001</real>
 	<key>tr</key>
-	<real>3.2300000190734863</real>
+	<real>3.2579998970031738</real>
 	<key>trNum</key>
-	<integer>246</integer>
+	<integer>244</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
