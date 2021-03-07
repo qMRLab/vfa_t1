@@ -64,11 +64,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>6.8569574356079102</real>
+				<real>4.1892647743225098</real>
 				<key>plateauDuration</key>
 				<real>1.1970070113915257</real>
 				<key>plateauRefocusOffset</key>
-				<real>0.99765932998657147</real>
+				<real>0.59850350569576283</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -120,7 +120,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.0542972157766632</real>
+					<real>0.6551413914858546</real>
 				</dict>
 				<key>duration</key>
 				<real>1.1970070113915257</real>
@@ -141,7 +141,7 @@
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>rfType</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>stopbandRipple</key>
 				<real>-40</real>
 				<key>timeBandwidth</key>
@@ -175,7 +175,7 @@
 	<key>absoluteTime</key>
 	<real>4.3099956512451172</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -359,7 +359,7 @@
 	<key>timeWithinTr</key>
 	<real>4.3099956512451172</real>
 	<key>tr</key>
-	<real>1.537391185760498</real>
+	<real>1.6871217489242554</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
