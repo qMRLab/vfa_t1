@@ -107,8 +107,6 @@ function ExportBlock(input){
 
   var that = this;
 
-  var date = new Date();
-
   //var imageExport = new RthReconToQmrlab();
   // This is a bit annoying, but the only option for now. 
   this.imageExport = new RthReconImageExport();
@@ -155,67 +153,70 @@ function ExportBlock(input){
 this.changeInformation.observeKeys(this.reconKeys);
 
 this.changeInformation.observedKeysChanged.connect(function(keys){
-  that.changeInformation.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
-  that.changeInformation.addTag("SequenceName",keys["mri.SequenceName"]);
-  that.changeInformation.addTag("ExcitationTimeBandwidth",keys["mri.ExcitationTimeBandwidth"]);
-  that.changeInformation.addTag("ExcitationDuration",keys["mri.ExcitationDuration"]);
-  that.changeInformation.addTag("SpacingX",keys["mri.VoxelSpacing"][0]);
-  that.changeInformation.addTag("SpacingY",keys["mri.VoxelSpacing"][1]);
-  that.changeInformation.addTag("SpacingZ",keys["mri.VoxelSpacing"][2]);
-  that.changeInformation.addTag("EchoTime",keys["mri.EchoTime"]);
-  that.changeInformation.addTag("RepetitionTime",keys["mri.RepetitionTime"]);
-  that.changeInformation.addTag("FlipAngle1",keys["mri.FlipAngle1"]);
-  that.changeInformation.addTag("FlipAngle2",keys["mri.FlipAngle2"]);
-  that.changeInformation.addTag("FlipAngle",keys["mri.FlipAngle"]);
-  that.changeInformation.addTag("SliceThickness",keys["mri.SliceThickness"]);
-  that.changeInformation.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
-  that.changeInformation.addTag("NumberOfColumns",keys["acquisition.samples"]);
-  that.changeInformation.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
-  that.changeInformation.addTag("TranslationX",keys["geometry.TranslationX"]);
-  that.changeInformation.addTag("TranslationY",keys["geometry.TranslationY"]);
-  that.changeInformation.addTag("TranslationZ",keys["geometry.TranslationZ"]);
-  that.changeInformation.addTag("QuaternionW",keys["geometry.QuaternionW"]);
-  that.changeInformation.addTag("QuaternionX",keys["geometry.QuaternionX"]);
-  that.changeInformation.addTag("QuaternionY",keys["geometry.QuaternionY"]);
-  that.changeInformation.addTag("QuaternionZ",keys["geometry.QuaternionZ"]);
-  that.changeInformation.addTag("FieldOfViewX",keys["geometry.FieldOfViewX"]);
-  that.changeInformation.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
-  that.changeInformation.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
-  that.changeInformation.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
+  that.changeInformation.addTag("user.NumberOfCoils",keys["mri.NumberOfCoils"]);
+  that.changeInformation.addTag("user.SequenceName",keys["mri.SequenceName"]);
+  that.changeInformation.addTag("user.ExcitationTimeBandwidth",keys["mri.ExcitationTimeBandwidth"]);
+  that.changeInformation.addTag("user.ExcitationDuration",keys["mri.ExcitationDuration"]);
+  that.changeInformation.addTag("user.SpacingX",keys["mri.VoxelSpacing"][0]);
+  that.changeInformation.addTag("user.SpacingY",keys["mri.VoxelSpacing"][1]);
+  that.changeInformation.addTag("user.SpacingZ",keys["mri.VoxelSpacing"][2]);
+  that.changeInformation.addTag("user.EchoTime",keys["mri.EchoTime"]);
+  that.changeInformation.addTag("user.RepetitionTime",keys["mri.RepetitionTime"]);
+  that.changeInformation.addTag("user.FlipAngle1",keys["mri.FlipAngle1"]);
+  that.changeInformation.addTag("user.FlipAngle2",keys["mri.FlipAngle2"]);
+  that.changeInformation.addTag("user.FlipAngle",keys["mri.FlipAngle"]);
+  that.changeInformation.addTag("user.SliceThickness",keys["mri.SliceThickness"]);
+  that.changeInformation.addTag("user.NumberOfRows",keys["reconstruction.phaseEncodes"]);
+  that.changeInformation.addTag("user.NumberOfColumns",keys["acquisition.samples"]);
+  that.changeInformation.addTag("user.PreAcqDuration",keys["mri.PreAcqDuration"]);
+  that.changeInformation.addTag("user.TranslationX",keys["geometry.TranslationX"]);
+  that.changeInformation.addTag("user.TranslationY",keys["geometry.TranslationY"]);
+  that.changeInformation.addTag("user.TranslationZ",keys["geometry.TranslationZ"]);
+  that.changeInformation.addTag("user.QuaternionW",keys["geometry.QuaternionW"]);
+  that.changeInformation.addTag("user.QuaternionX",keys["geometry.QuaternionX"]);
+  that.changeInformation.addTag("user.QuaternionY",keys["geometry.QuaternionY"]);
+  that.changeInformation.addTag("user.QuaternionZ",keys["geometry.QuaternionZ"]);
+  that.changeInformation.addTag("user.FieldOfViewX",keys["geometry.FieldOfViewX"]);
+  that.changeInformation.addTag("user.FieldOfViewY",keys["geometry.FieldOfViewY"]);
+  that.changeInformation.addTag("user.FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
 });
 
 
 
-this.imageExport.observeKeys([this.reconKeys]);
+this.imageExport.observeKeys([
+  "mri.SubjectBIDS",
+  "mri.SessionBIDS",
+  "mri.AcquisitionBIDS",
+  "mri.FlipIndex"
+]);
 
 this.imageExport.observedKeysChanged.connect(function(keys){
-  that.imageExport.addInformationKey("NumberOfCoils");
-  that.imageExport.addInformationKey("SequenceName");
-  that.imageExport.addInformationKey("ExcitationTimeBandwidth");
-  that.imageExport.addInformationKey("ExcitationDuration");
-  that.imageExport.addInformationKey("SpacingX");
-  that.imageExport.addInformationKey("SpacingY");
-  that.imageExport.addInformationKey("SpacingZ");
-  that.imageExport.addInformationKey("EchoTime");
-  that.imageExport.addInformationKey("RepetitionTime");
-  that.imageExport.addInformationKey("FlipAngle1");
-  that.imageExport.addInformationKey("FlipAngle2");
-  that.imageExport.addInformationKey("FlipAngle");
-  that.imageExport.addInformationKey("SliceThickness");
-  that.imageExport.addInformationKey("NumberOfRows");
-  that.imageExport.addInformationKey("NumberOfColumns");
-  that.imageExport.addInformationKey("PreAcqDuration");
-  that.imageExport.addInformationKey("TranslationX");
-  that.imageExport.addInformationKey("TranslationY");
-  that.imageExport.addInformationKey("TranslationZ");
-  that.imageExport.addInformationKey("QuaternionW");
-  that.imageExport.addInformationKey("QuaternionX");
-  that.imageExport.addInformationKey("QuaternionY");
-  that.imageExport.addInformationKey("QuaternionZ");
-  that.imageExport.addInformationKey("FieldOfViewX");
-  that.imageExport.addInformationKey("FieldOfViewY");
-  that.imageExport.addInformationKey("FieldOfViewZ");
-  that.imageExport.addInformationKey("YYYMMDD");
+  that.imageExport.addInformationKey("user.NumberOfCoils");
+  that.imageExport.addInformationKey("user.SequenceName");
+  that.imageExport.addInformationKey("user.ExcitationTimeBandwidth");
+  that.imageExport.addInformationKey("user.ExcitationDuration");
+  that.imageExport.addInformationKey("user.SpacingX");
+  that.imageExport.addInformationKey("user.SpacingY");
+  that.imageExport.addInformationKey("user.SpacingZ");
+  that.imageExport.addInformationKey("user.EchoTime");
+  that.imageExport.addInformationKey("user.RepetitionTime");
+  that.imageExport.addInformationKey("user.FlipAngle1");
+  that.imageExport.addInformationKey("user.FlipAngle2");
+  that.imageExport.addInformationKey("user.FlipAngle");
+  that.imageExport.addInformationKey("user.SliceThickness");
+  that.imageExport.addInformationKey("user.NumberOfRows");
+  that.imageExport.addInformationKey("user.NumberOfColumns");
+  that.imageExport.addInformationKey("user.PreAcqDuration");
+  that.imageExport.addInformationKey("user.TranslationX");
+  that.imageExport.addInformationKey("user.TranslationY");
+  that.imageExport.addInformationKey("user.TranslationZ");
+  that.imageExport.addInformationKey("user.QuaternionW");
+  that.imageExport.addInformationKey("user.QuaternionX");
+  that.imageExport.addInformationKey("user.QuaternionY");
+  that.imageExport.addInformationKey("user.QuaternionZ");
+  that.imageExport.addInformationKey("user.FieldOfViewX");
+  that.imageExport.addInformationKey("user.FieldOfViewY");
+  that.imageExport.addInformationKey("user.FieldOfViewZ");
     var exportDirectory = "/home/agah/Desktop/AgahHV/";
     var flipIndex = keys["mri.FlipIndex"];
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
