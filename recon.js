@@ -113,7 +113,7 @@ function ExportBlock(input){
 
   this.changeInformation = new RthReconImageChangeInformation();
 
-  this.reconKeys = [
+  var reconKeys = [
     // For now, addTag does not support type string. 
     "mri.SequenceName",
     //"mri.ScanningSequence",
@@ -150,7 +150,7 @@ function ExportBlock(input){
     "mri.AcquisitionBIDS"  
   ];
 
-this.changeInformation.observeKeys(this.reconKeys);
+this.changeInformation.observeKeys(reconKeys);
 
 this.changeInformation.observedKeysChanged.connect(function(keys){
   that.changeInformation.addTag("user.NumberOfCoils",keys["mri.NumberOfCoils"]);
@@ -190,33 +190,11 @@ this.imageExport.observeKeys([
   "mri.FlipIndex"
 ]);
 
+this.imageExport.addInformationKey("mri.VoxelSpacing");
+this.imageExport.addInformationKey("user.FieldOfViewZ");
+
 this.imageExport.observedKeysChanged.connect(function(keys){
-  that.imageExport.addInformationKey("user.NumberOfCoils");
-  that.imageExport.addInformationKey("user.SequenceName");
-  that.imageExport.addInformationKey("user.ExcitationTimeBandwidth");
-  that.imageExport.addInformationKey("user.ExcitationDuration");
-  that.imageExport.addInformationKey("user.SpacingX");
-  that.imageExport.addInformationKey("user.SpacingY");
-  that.imageExport.addInformationKey("user.SpacingZ");
-  that.imageExport.addInformationKey("user.EchoTime");
-  that.imageExport.addInformationKey("user.RepetitionTime");
-  that.imageExport.addInformationKey("user.FlipAngle1");
-  that.imageExport.addInformationKey("user.FlipAngle2");
-  that.imageExport.addInformationKey("user.FlipAngle");
-  that.imageExport.addInformationKey("user.SliceThickness");
-  that.imageExport.addInformationKey("user.NumberOfRows");
-  that.imageExport.addInformationKey("user.NumberOfColumns");
-  that.imageExport.addInformationKey("user.PreAcqDuration");
-  that.imageExport.addInformationKey("user.TranslationX");
-  that.imageExport.addInformationKey("user.TranslationY");
-  that.imageExport.addInformationKey("user.TranslationZ");
-  that.imageExport.addInformationKey("user.QuaternionW");
-  that.imageExport.addInformationKey("user.QuaternionX");
-  that.imageExport.addInformationKey("user.QuaternionY");
-  that.imageExport.addInformationKey("user.QuaternionZ");
-  that.imageExport.addInformationKey("user.FieldOfViewX");
-  that.imageExport.addInformationKey("user.FieldOfViewY");
-  that.imageExport.addInformationKey("user.FieldOfViewZ");
+
     var exportDirectory = "/home/agah/Desktop/AgahHV/";
     var flipIndex = keys["mri.FlipIndex"];
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
