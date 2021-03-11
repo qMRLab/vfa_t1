@@ -115,7 +115,7 @@ function ExportBlock(input){
 
   this.changeInformation = new RthReconImageChangeInformation();
 
-  this.changeInformation.observeKeys([
+  this.reconKeys = [
     // For now, addTag does not support type string. 
     "mri.SequenceName",
     //"mri.ScanningSequence",
@@ -150,8 +150,9 @@ function ExportBlock(input){
     "mri.SubjectBIDS",
     "mri.SessionBIDS",
     "mri.AcquisitionBIDS"  
-  ]);
+  ];
 
+this.changeInformation.observeKeys(this.reconKeys);
 
 this.changeInformation.observedKeysChanged.connect(function(keys){
   that.changeInformation.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
@@ -183,43 +184,38 @@ this.changeInformation.observedKeysChanged.connect(function(keys){
   that.changeInformation.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
 });
 
-this.imageExport.addInformationKey("NumberOfCoils");
-this.imageExport.addInformationKey("SequenceName");
-this.imageExport.addInformationKey("ExcitationTimeBandwidth");
-this.imageExport.addInformationKey("ExcitationDuration");
-this.imageExport.addInformationKey("SpacingX");
-this.imageExport.addInformationKey("SpacingY");
-this.imageExport.addInformationKey("SpacingZ");
-this.imageExport.addInformationKey("EchoTime");
-this.imageExport.addInformationKey("RepetitionTime");
-this.imageExport.addInformationKey("FlipAngle1");
-this.imageExport.addInformationKey("FlipAngle2");
-this.imageExport.addInformationKey("FlipAngle");
-this.imageExport.addInformationKey("SliceThickness");
-this.imageExport.addInformationKey("NumberOfRows");
-this.imageExport.addInformationKey("NumberOfColumns");
-this.imageExport.addInformationKey("PreAcqDuration");
-this.imageExport.addInformationKey("TranslationX");
-this.imageExport.addInformationKey("TranslationY");
-this.imageExport.addInformationKey("TranslationZ");
-this.imageExport.addInformationKey("QuaternionW");
-this.imageExport.addInformationKey("QuaternionX");
-this.imageExport.addInformationKey("QuaternionY");
-this.imageExport.addInformationKey("QuaternionZ");
-this.imageExport.addInformationKey("FieldOfViewX");
-this.imageExport.addInformationKey("FieldOfViewY");
-this.imageExport.addInformationKey("FieldOfViewZ");
-this.imageExport.addInformationKey("YYYMMDD");
 
-this.imageExport.observeKeys([
-                      "mri.FlipIndex",
-                      "mri.SubjectBIDS",
-                      "mri.SessionBIDS",
-                      "mri.AcquisitionBIDS"
-]);
+
+this.imageExport.observeKeys([this.reconKeys]);
 
 this.imageExport.observedKeysChanged.connect(function(keys){
-    
+  that.imageExport.addInformationKey("NumberOfCoils");
+  that.imageExport.addInformationKey("SequenceName");
+  that.imageExport.addInformationKey("ExcitationTimeBandwidth");
+  that.imageExport.addInformationKey("ExcitationDuration");
+  that.imageExport.addInformationKey("SpacingX");
+  that.imageExport.addInformationKey("SpacingY");
+  that.imageExport.addInformationKey("SpacingZ");
+  that.imageExport.addInformationKey("EchoTime");
+  that.imageExport.addInformationKey("RepetitionTime");
+  that.imageExport.addInformationKey("FlipAngle1");
+  that.imageExport.addInformationKey("FlipAngle2");
+  that.imageExport.addInformationKey("FlipAngle");
+  that.imageExport.addInformationKey("SliceThickness");
+  that.imageExport.addInformationKey("NumberOfRows");
+  that.imageExport.addInformationKey("NumberOfColumns");
+  that.imageExport.addInformationKey("PreAcqDuration");
+  that.imageExport.addInformationKey("TranslationX");
+  that.imageExport.addInformationKey("TranslationY");
+  that.imageExport.addInformationKey("TranslationZ");
+  that.imageExport.addInformationKey("QuaternionW");
+  that.imageExport.addInformationKey("QuaternionX");
+  that.imageExport.addInformationKey("QuaternionY");
+  that.imageExport.addInformationKey("QuaternionZ");
+  that.imageExport.addInformationKey("FieldOfViewX");
+  that.imageExport.addInformationKey("FieldOfViewY");
+  that.imageExport.addInformationKey("FieldOfViewZ");
+  that.imageExport.addInformationKey("YYYMMDD");
     var exportDirectory = "/home/agah/Desktop/AgahHV/";
     var flipIndex = keys["mri.FlipIndex"];
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
