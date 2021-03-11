@@ -113,6 +113,9 @@ function ExportBlock(input){
 
   this.changeInformation = new RthReconImageChangeInformation();
 
+  this.sysInformation = new RthSystemInformation();
+  this.sysInformation.toFile("/home/agah/Desktop/AgahHV/yokartik.json","benBirKorsanim");
+
   var reconKeys = new Array();
   
   reconKeys = [
