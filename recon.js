@@ -112,9 +112,12 @@ function ExportBlock(input){
   //var imageExport = new RthReconToQmrlab();
   // This is a bit annoying, but the only option for now. 
   this.imageExport = new RthReconImageExport();
-  this.imageExport.observeKeys([
+
+  this.changeInformation = new RthReconImageChangeInformation();
+
+  this.changeInformation.observeKeys([
     // For now, addTag does not support type string. 
-    //"mri.SequenceName",
+    "mri.SequenceName",
     //"mri.ScanningSequence",
     //"mri.SequenceVariant",
     //"mri.MRAcquisitionType",
@@ -148,33 +151,75 @@ function ExportBlock(input){
     "mri.SessionBIDS",
     "mri.AcquisitionBIDS"  
   ]);
-  this.imageExport.observedKeysChanged.connect(function(keys){
-    that.imageExport.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
-    that.imageExport.addTag("ExcitationTimeBandwidth",keys["mri.ExcitationTimeBandwidth"]);
-    that.imageExport.addTag("ExcitationDuration",keys["mri.ExcitationDuration"]);
-    that.imageExport.addTag("SpacingX",keys["mri.VoxelSpacing"][0]);
-    that.imageExport.addTag("SpacingY",keys["mri.VoxelSpacing"][1]);
-    that.imageExport.addTag("SpacingZ",keys["mri.VoxelSpacing"][2]);
-    that.imageExport.addTag("EchoTime",keys["mri.EchoTime"]);
-    that.imageExport.addTag("RepetitionTime",keys["mri.RepetitionTime"]);
-    that.imageExport.addTag("FlipAngle1",keys["mri.FlipAngle1"]);
-    that.imageExport.addTag("FlipAngle2",keys["mri.FlipAngle2"]);
-    that.imageExport.addTag("FlipAngle",keys["mri.FlipAngle"]);
-    that.imageExport.addTag("SliceThickness",keys["mri.SliceThickness"]);
-    that.imageExport.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
-    that.imageExport.addTag("NumberOfColumns",keys["acquisition.samples"]);
-    that.imageExport.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
-    that.imageExport.addTag("TranslationX",keys["geometry.TranslationX"]);
-    that.imageExport.addTag("TranslationY",keys["geometry.TranslationY"]);
-    that.imageExport.addTag("TranslationZ",keys["geometry.TranslationZ"]);
-    that.imageExport.addTag("QuaternionW",keys["geometry.QuaternionW"]);
-    that.imageExport.addTag("QuaternionX",keys["geometry.QuaternionX"]);
-    that.imageExport.addTag("QuaternionY",keys["geometry.QuaternionY"]);
-    that.imageExport.addTag("QuaternionZ",keys["geometry.QuaternionZ"]);
-    that.imageExport.addTag("FieldOfViewX",keys["geometry.FieldOfViewX"]);
-    that.imageExport.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
-    that.imageExport.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
-    that.imageExport.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
+
+
+this.changeInformation.observedKeysChanged.connect(function(keys){
+  that.changeInformation.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
+  that.changeInformation.addTag("SequenceName",keys["mri.SequenceName"]);
+  that.changeInformation.addTag("ExcitationTimeBandwidth",keys["mri.ExcitationTimeBandwidth"]);
+  that.changeInformation.addTag("ExcitationDuration",keys["mri.ExcitationDuration"]);
+  that.changeInformation.addTag("SpacingX",keys["mri.VoxelSpacing"][0]);
+  that.changeInformation.addTag("SpacingY",keys["mri.VoxelSpacing"][1]);
+  that.changeInformation.addTag("SpacingZ",keys["mri.VoxelSpacing"][2]);
+  that.changeInformation.addTag("EchoTime",keys["mri.EchoTime"]);
+  that.changeInformation.addTag("RepetitionTime",keys["mri.RepetitionTime"]);
+  that.changeInformation.addTag("FlipAngle1",keys["mri.FlipAngle1"]);
+  that.changeInformation.addTag("FlipAngle2",keys["mri.FlipAngle2"]);
+  that.changeInformation.addTag("FlipAngle",keys["mri.FlipAngle"]);
+  that.changeInformation.addTag("SliceThickness",keys["mri.SliceThickness"]);
+  that.changeInformation.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
+  that.changeInformation.addTag("NumberOfColumns",keys["acquisition.samples"]);
+  that.changeInformation.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
+  that.changeInformation.addTag("TranslationX",keys["geometry.TranslationX"]);
+  that.changeInformation.addTag("TranslationY",keys["geometry.TranslationY"]);
+  that.changeInformation.addTag("TranslationZ",keys["geometry.TranslationZ"]);
+  that.changeInformation.addTag("QuaternionW",keys["geometry.QuaternionW"]);
+  that.changeInformation.addTag("QuaternionX",keys["geometry.QuaternionX"]);
+  that.changeInformation.addTag("QuaternionY",keys["geometry.QuaternionY"]);
+  that.changeInformation.addTag("QuaternionZ",keys["geometry.QuaternionZ"]);
+  that.changeInformation.addTag("FieldOfViewX",keys["geometry.FieldOfViewX"]);
+  that.changeInformation.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
+  that.changeInformation.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
+  that.changeInformation.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay()
+);
+
+this.imageExport.addInformationKey("NumberOfCoils");
+this.imageExport.addInformationKey("SequenceName");
+this.imageExport.addInformationKey("ExcitationTimeBandwidth");
+this.imageExport.addInformationKey("ExcitationDuration");
+this.imageExport.addInformationKey("SpacingX");
+this.imageExport.addInformationKey("SpacingY");
+this.imageExport.addInformationKey("SpacingZ");
+this.imageExport.addInformationKey("EchoTime");
+this.imageExport.addInformationKey("RepetitionTime");
+this.imageExport.addInformationKey("FlipAngle1");
+this.imageExport.addInformationKey("FlipAngle2");
+this.imageExport.addInformationKey("FlipAngle");
+this.imageExport.addInformationKey("SliceThickness");
+this.imageExport.addInformationKey("NumberOfRows");
+this.imageExport.addInformationKey("NumberOfColumns");
+this.imageExport.addInformationKey("PreAcqDuration");
+this.imageExport.addInformationKey("TranslationX");
+this.imageExport.addInformationKey("TranslationY");
+this.imageExport.addInformationKey("TranslationZ");
+this.imageExport.addInformationKey("QuaternionW");
+this.imageExport.addInformationKey("QuaternionX");
+this.imageExport.addInformationKey("QuaternionY");
+this.imageExport.addInformationKey("QuaternionZ");
+this.imageExport.addInformationKey("FieldOfViewX");
+this.imageExport.addInformationKey("FieldOfViewY");
+this.imageExport.addInformationKey("FieldOfViewZ");
+this.imageExport.addInformationKey("YYYMMDD");
+
+this.imageExport.observeKeys([
+                      "mri.FlipIndex",
+                      "mri.SubjectBIDS",
+                      "mri.SessionBIDS",
+                      "mri.AcquisitionBIDS"
+]);
+
+this.imageExport.observedKeysChanged.connect(function(keys){
+    
     var exportDirectory = "/home/agah/Desktop/AgahHV/";
     var flipIndex = keys["mri.FlipIndex"];
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
