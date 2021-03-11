@@ -113,7 +113,9 @@ function ExportBlock(input){
 
   this.changeInformation = new RthReconImageChangeInformation();
 
-  var reconKeys = [
+  var reconKeys = new Array();
+  
+  reconKeys = [
     // For now, addTag does not support type string. 
     "mri.SequenceName",
     //"mri.ScanningSequence",
@@ -150,37 +152,10 @@ function ExportBlock(input){
     "mri.AcquisitionBIDS"  
   ];
 
-this.changeInformation.observeKeys(reconKeys);
 
-this.changeInformation.observedKeysChanged.connect(function(keys){
-  that.changeInformation.addTag("user.NumberOfCoils",keys["mri.NumberOfCoils"]);
-  that.changeInformation.addTag("user.SequenceName",keys["mri.SequenceName"]);
-  that.changeInformation.addTag("user.ExcitationTimeBandwidth",keys["mri.ExcitationTimeBandwidth"]);
-  that.changeInformation.addTag("user.ExcitationDuration",keys["mri.ExcitationDuration"]);
-  that.changeInformation.addTag("user.SpacingX",keys["mri.VoxelSpacing"][0]);
-  that.changeInformation.addTag("user.SpacingY",keys["mri.VoxelSpacing"][1]);
-  that.changeInformation.addTag("user.SpacingZ",keys["mri.VoxelSpacing"][2]);
-  that.changeInformation.addTag("user.EchoTime",keys["mri.EchoTime"]);
-  that.changeInformation.addTag("user.RepetitionTime",keys["mri.RepetitionTime"]);
-  that.changeInformation.addTag("user.FlipAngle1",keys["mri.FlipAngle1"]);
-  that.changeInformation.addTag("user.FlipAngle2",keys["mri.FlipAngle2"]);
-  that.changeInformation.addTag("user.FlipAngle",keys["mri.FlipAngle"]);
-  that.changeInformation.addTag("user.SliceThickness",keys["mri.SliceThickness"]);
-  that.changeInformation.addTag("user.NumberOfRows",keys["reconstruction.phaseEncodes"]);
-  that.changeInformation.addTag("user.NumberOfColumns",keys["acquisition.samples"]);
-  that.changeInformation.addTag("user.PreAcqDuration",keys["mri.PreAcqDuration"]);
-  that.changeInformation.addTag("user.TranslationX",keys["geometry.TranslationX"]);
-  that.changeInformation.addTag("user.TranslationY",keys["geometry.TranslationY"]);
-  that.changeInformation.addTag("user.TranslationZ",keys["geometry.TranslationZ"]);
-  that.changeInformation.addTag("user.QuaternionW",keys["geometry.QuaternionW"]);
-  that.changeInformation.addTag("user.QuaternionX",keys["geometry.QuaternionX"]);
-  that.changeInformation.addTag("user.QuaternionY",keys["geometry.QuaternionY"]);
-  that.changeInformation.addTag("user.QuaternionZ",keys["geometry.QuaternionZ"]);
-  that.changeInformation.addTag("user.FieldOfViewX",keys["geometry.FieldOfViewX"]);
-  that.changeInformation.addTag("user.FieldOfViewY",keys["geometry.FieldOfViewY"]);
-  that.changeInformation.addTag("user.FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
-});
-
+  for (var i = 0; i<reconKeys.length; i++){
+    this.imageExport.addInformationKey(reconKeys[i]);
+  }
 
 
 this.imageExport.observeKeys([
@@ -190,8 +165,6 @@ this.imageExport.observeKeys([
   "mri.FlipIndex"
 ]);
 
-this.imageExport.addInformationKey("mri.VoxelSpacing");
-this.imageExport.addInformationKey("user.FieldOfViewZ");
 
 this.imageExport.observedKeysChanged.connect(function(keys){
 
