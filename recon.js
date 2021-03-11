@@ -180,8 +180,8 @@ this.changeInformation.observedKeysChanged.connect(function(keys){
   that.changeInformation.addTag("FieldOfViewX",keys["geometry.FieldOfViewX"]);
   that.changeInformation.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
   that.changeInformation.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
-  that.changeInformation.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay()
-);
+  that.changeInformation.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
+});
 
 this.imageExport.addInformationKey("NumberOfCoils");
 this.imageExport.addInformationKey("SequenceName");
