@@ -113,21 +113,18 @@ function ExportBlock(input){
 
   this.changeInformation = new RthReconImageChangeInformation();
 
-  this.sysInformation = new RthSystemInformation();
-  this.sysInformation.toFile("/home/agah/Desktop/AgahHV/yokartik.json","benBirKorsanim");
-
   var reconKeys = new Array();
   
   reconKeys = [
     // For now, addTag does not support type string. 
     "mri.SequenceName",
-    //"mri.ScanningSequence",
-    //"mri.SequenceVariant",
-    //"mri.MRAcquisitionType",
+    "mri.ScanningSequence",
+    "mri.SequenceVariant",
+    "mri.MRAcquisitionType",
     "mri.NumberOfCoils",
     "mri.ExcitationTimeBandwidth",
     "mri.ExcitationDuration",
-    //"mri.ExcitationType",
+    "mri.ExcitationType",
     "mri.VoxelSpacing",
     "mri.EchoTime",
     "mri.RepetitionTime",
@@ -152,7 +149,30 @@ function ExportBlock(input){
     "mri.FlipIndex", // Ensured that this one will change per run.
     "mri.SubjectBIDS",
     "mri.SessionBIDS",
-    "mri.AcquisitionBIDS"  
+    "mri.AcquisitionBIDS",
+    "equipment.device/manufacturer",
+    "equipment.device/manufacturerModelName",
+    "equipment.device/softwareVersions",
+    "equipment.gradient/dcGain",
+    "equipment.gradient/xMaximumAmplitude",
+    "equipment.gradient/xRiseTime",
+    "equipment.gradient/xDbdtDistance",
+    "equipment.hostManufacturerModelName",
+    "equipment.hostSoftwareVersions",
+    "equipment.magnet/fieldStrength",
+    "equipment.prescan/cf",
+    "equipment.prescan/maxB1",
+    "equipment.prescan/nucleus",
+    "equipment.prescan/r1",
+    "equipment.prescan/r2",
+    "equipment.prescan/refPulseInGauss",
+    "equipment.prescan/refVoltage",
+    "equipment.prescan/status",
+    "equipment.prescan/tg",
+    "equipment.prescan/xs",
+    "equipment.prescan/ys",
+    "equipment.prescan/zs",
+    "equipment.regulatory/peakSar",
   ];
 
 
@@ -167,7 +187,6 @@ this.imageExport.observeKeys([
   "mri.AcquisitionBIDS",
   "mri.FlipIndex"
 ]);
-
 
 this.imageExport.observedKeysChanged.connect(function(keys){
 
