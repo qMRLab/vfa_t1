@@ -137,7 +137,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>16</integer>
+				<integer>20</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -174,7 +174,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>16</integer>
+				<integer>20</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -244,7 +244,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>16</integer>
+				<integer>20</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -334,13 +334,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>731</integer>
+		<integer>935</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1466</integer>
 		<key>x</key>
-		<integer>-14</integer>
+		<integer>-8</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>94</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -370,7 +370,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>399</real>
+			<real>603</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -398,7 +398,7 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>115.234375</real>
+			<real>319</real>
 			<key>viewHeight</key>
 			<real>402</real>
 			<key>viewLeft</key>
@@ -418,7 +418,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-83</real>
+			<real>121</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -438,7 +438,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>504</real>
+			<real>708</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -458,7 +458,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>415.5</real>
+			<real>619</real>
 			<key>viewHeight</key>
 			<real>251</real>
 			<key>viewLeft</key>
@@ -486,9 +486,9 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-230.5</real>
+			<real>-27</real>
 			<key>viewHeight</key>
-			<real>675.5</real>
+			<real>676</real>
 			<key>viewLeft</key>
 			<real>493.55078125</real>
 			<key>viewWidth</key>
@@ -510,7 +510,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>233.17578125</real>
+			<real>437</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
