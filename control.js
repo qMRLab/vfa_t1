@@ -215,7 +215,7 @@ controlWidget.inputWidget_FOV.value   = startingFOV;
 
 controlWidget.inputWidget_TR.minimum = minTR;
 controlWidget.inputWidget_TR.maximum = minTR + 30;
-controlWidget.inputWidget_TR.value   = minTR;
+controlWidget.inputWidget_TR.value   = 20;
 
 //FIXME: FA param names  
 controlWidget.inputWidget_FA1.minimum = startingFA1;
@@ -228,7 +228,7 @@ controlWidget.inputWidget_FA2.value   = startingFA1;
 
 controlWidget.inputWidget_TE.minimum = minTE;
 controlWidget.inputWidget_TE.maximum = 8;
-controlWidget.inputWidget_TE.value   = 5;
+controlWidget.inputWidget_TE.value   = 3;
 
 
 function sessionClicked(chck){
