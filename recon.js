@@ -195,7 +195,7 @@ this.imageExport.observedKeysChanged.connect(function(keys){
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
     var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
-    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_flip-" + flipIndex + "_VFAT1.dat";
+    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_mt-" + flipIndex + "_VFAT1.dat";
     that.imageExport.setFileName(exportFileName);
 
   });
