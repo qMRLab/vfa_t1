@@ -52,7 +52,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>script</key>
-			<string>SB['&lt;RF Frequency&gt;.frequencyShift'] = 1200;
+			<string>SB['&lt;RF Frequency&gt;.frequencyShift'] = 2000;
 SB['&lt;Fermi RF&gt;.transitionWidth'] = SB['&lt;Fermi RF&gt;.duration']/33.81;
 SB.message(SB['&lt;Fermi RF&gt;.pulseWidth']);
 </string>
@@ -165,7 +165,7 @@ SB.message(SB['&lt;Fermi RF&gt;.pulseWidth']);
 				<key>endAnchorKey</key>
 				<string>&lt;Fermi RF&gt;.end</string>
 				<key>frequencyShift</key>
-				<real>1200</real>
+				<real>2000</real>
 				<key>pluginClass</key>
 				<string>SBRFFrequency</string>
 				<key>pluginName</key>
@@ -190,7 +190,7 @@ SB.message(SB['&lt;Fermi RF&gt;.pulseWidth']);
 	<key>absoluteTime</key>
 	<real>13.079986572265625</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
