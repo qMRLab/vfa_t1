@@ -32,12 +32,18 @@ rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, {
   zPartitions: zPartitions
 }));
 
+var instanceName = rth.instanceName();
+
+var scanNotification = rth.newNotification();
+var mtsatProgress = scanNotification.addProgressBar("MTSAT");
+scanNotification.text = instanceName;
+
 // Get the sequence parameters from the sequencer.
 var scannerParameters = new RthUpdateGetParametersCommand(sequenceId);
 rth.addCommand(scannerParameters);
 var parameterList = scannerParameters.receivedData();
 
-var instanceName = rth.instanceName();
+
 
 rth.addSeriesDescription(instanceName);
 
@@ -82,15 +88,15 @@ rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
 // Assume FA from SB as the smaller.
 var startingFA2 = SB.excitation["<Sinc RF>.tip"]; //20
 // FA should be in decreasing order (FA1 > FA2)
-var startingFA1 = startingFA2 - 17;
+var startingFA1 = startingFA2 - 14;
 
 // To store the current values 
 var sliceThickness = startingThickness;
 var fieldOfView = startingFOV;
 
 //FIXME: This is temporary. Fix the order
-var flipAngle1 = startingFA2;
-var flipAngle2 = startingFA1;
+var flipAngle1 = startingFA2; // large (20 init)
+var flipAngle2 = startingFA1; // small (6 init)
 
 var echoTime = startingTE;
 var repetitionTime = startingTR;
@@ -219,12 +225,12 @@ controlWidget.inputWidget_TR.maximum = minTR + 30;
 controlWidget.inputWidget_TR.value   = 20;
 
 //FIXME: FA param names  
-controlWidget.inputWidget_FA1.minimum = startingFA1;
-controlWidget.inputWidget_FA1.maximum = 90;
+controlWidget.inputWidget_FA1.minimum = 3;
+controlWidget.inputWidget_FA1.maximum = 20;
 controlWidget.inputWidget_FA1.value   = startingFA2;
 //FIXME: FA param names 
-controlWidget.inputWidget_FA2.minimum = startingFA1;
-controlWidget.inputWidget_FA2.maximum = startingFA1+5;
+controlWidget.inputWidget_FA2.minimum = 3;
+controlWidget.inputWidget_FA2.maximum = 19;
 controlWidget.inputWidget_FA2.value   = startingFA1;
 
 controlWidget.inputWidget_TE.minimum = minTE;
@@ -315,23 +321,40 @@ changeSliceThickness(controlWidget.inputWidget_SliceThickness.value);
 
 // ADD LOOP COMMANDS
 
-//var bigAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", 1);
-// Following sets FlipAngle to 3 when FA1 = 30 and FA2=25 
-//var smallAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", flipAngle2/flipAngle1);
+// MTW
+var mtwCommand1 = rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "mt1200", true));
+var mtwCommand2 = rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "mt2000", false));
+var mtwCommand3 = new RthUpdateIntParameterCommand(sequenceId, "", "setDesiredTR", "", 28000);
+var mtwCommand4 = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", flipAngle2/flipAngle1);
+var mtwCommand5 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle1, FlipIndex: "01", RepetitionTime: 0.028, MTState: true});
+var mtwCommand6 = rth.addCommand(mtsatProgress.setProgress(1/3));
+var mtwGroup = new RthUpdateGroup([mtwCommand1, mtwCommand2, mtwCommand3, mtwCommand4, mtwCommand5,mtwCommand6]);
 
-//rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
-//  SubjectBIDS: controlWidget.subjectBIDS.text,
-//  SessionBIDS: controlWidget.sessionBIDS.text,
-//  AcquisitionBIDS: controlWidget.acqBIDS.text
-//}));
+// PDW
+var pdwCommand1 = rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "mt1200", false));
+var pdwCommand2 = rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "mt2000", false));
+var pdwCommand3 = new RthUpdateIntParameterCommand(sequenceId, "", "setDesiredTR", "", 28000);
+var pdwCommand4 = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", flipAngle2/flipAngle1);
+var pdwCommand5 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle1, FlipIndex: "01", RepetitionTime: 0.028, MTState: false});
+var pdwCommand6 = rth.addCommand(mtsatProgress.setProgress(2/3));
+var pdwGroup = new RthUpdateGroup([pdwCommand1, pdwCommand2, pdwCommand3, pdwCommand4, pdwCommand5, pdwCommand6]);
+
+// T1w
+var t1wCommand1 = rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "mt1200", false));
+var t1wCommand2 = rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "mt2000", false));
+var t1wCommand3 = new RthUpdateIntParameterCommand(sequenceId, "", "setDesiredTR", "", 18000);
+var t1wCommand4 = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", 1);
+var t1wCommand5 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle2, FlipIndex: "02", RepetitionTime: 0.018, MTState: false});
+var t1wCommand6 = rth.addCommand(mtsatProgress.setProgress(3/3));
+var t1wGroup = new RthUpdateGroup([t1wCommand1, t1wCommand2, t1wCommand3, t1wCommand4, t1wCommand5, t1wCommand6]);
 
 
-//var infoCommand1 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle1, FlipIndex: "01"});
-//var infoCommand2 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle2, FlipIndex: "02"});
+rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+  SubjectBIDS: controlWidget.subjectBIDS.text,
+  SessionBIDS: controlWidget.sessionBIDS.text,
+  AcquisitionBIDS: controlWidget.acqBIDS.text
+}));
 
-//var updateGroup1 = new RthUpdateGroup([bigAngleCommand, infoCommand1]);
-//var updateGroup2 = new RthUpdateGroup([smallAngleCommand, infoCommand2]);
+var loopCommands = [mtwGroup, pdwGroup, t1wGroup];
 
-//var loopCommands = [updateGroup1, updateGroup2];
-
-//rth.setLoopCommands(sequenceId, "tiploop", loopCommands);
+rth.setLoopCommands(sequenceId, "mtsatloop", loopCommands);
