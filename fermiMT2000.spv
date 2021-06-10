@@ -190,7 +190,7 @@ SB.message(SB['&lt;Fermi RF&gt;.pulseWidth']);
 	<key>absoluteTime</key>
 	<real>13.079986572265625</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -230,7 +230,7 @@ SB.message(SB['&lt;Fermi RF&gt;.pulseWidth']);
 		<key>width</key>
 		<integer>1621</integer>
 		<key>x</key>
-		<integer>102</integer>
+		<integer>101</integer>
 		<key>y</key>
 		<integer>52</integer>
 	</dict>

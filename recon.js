@@ -44,7 +44,13 @@ function reconBlock(input) {
     //that.sort.setSliceEncodes(keys["reconstruction.zPartitions"]);
     //that.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
   //});
-  
+
+
+//this.scanNotification = rth.newNotification();
+//this.scanProgress = this.scanNotification.addProgressBar("MTsat");
+//this.scanNotification.text = instanceName;
+//this.scanNotification.enqueue();
+
  this.sort3d = new RthReconSort();
  this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index", "acquisition.<Repeat 1>.index"]);
  this.sort3d.setInput(input);
@@ -62,6 +68,7 @@ function reconBlock(input) {
   }
 );
 
+  
   //this.sort = RthReconSort();
   //this.sort.setIndexKeys(["acquisition.index"]);
   //this.sort.setInput(input);
@@ -79,7 +86,7 @@ function reconBlock(input) {
   //this.sort.setAccumulate(2*256);
   this.fft = new RthReconImageFFT();
   this.fft.setInput(this.sort3d.output());
-
+  // Disable after FFT node
   this.output = function() {
   return this.fft.output();
   };
