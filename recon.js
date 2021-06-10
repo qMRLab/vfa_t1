@@ -126,6 +126,10 @@ function ExportBlock(input){
     "mri.ExcitationDuration",
     "mri.ExcitationType",
     "mri.VoxelSpacing",
+    "mri.MTState",
+    "mri.MTOffsetFrequency",
+    "mri.MTPulseShape",
+    "mri.MTPulseDuration",
     "mri.EchoTime",
     "mri.RepetitionTime",
     "mri.FlipAngle1",
@@ -147,6 +151,7 @@ function ExportBlock(input){
     "geometry.FieldOfViewY",
     "geometry.FieldOfViewZ",
     "mri.FlipIndex", // Ensured that this one will change per run.
+    "mri.MTIndex",
     "mri.SubjectBIDS",
     "mri.SessionBIDS",
     "mri.AcquisitionBIDS",
@@ -185,18 +190,25 @@ this.imageExport.observeKeys([
   "mri.SubjectBIDS",
   "mri.SessionBIDS",
   "mri.AcquisitionBIDS",
-  "mri.FlipIndex"
+  "mri.FlipIndex",
+  "mri.RepetitionTime",
+  "mri.FlipAngle",
+  "mri.MTState",
+  "mri.MTIndex"
 ]);
 
 this.imageExport.observedKeysChanged.connect(function(keys){
 
     var exportDirectory = "/home/agah/Desktop/AgahHV/";
     var flipIndex = keys["mri.FlipIndex"];
+    var MTIndex = keys["mri.MTIndex"];
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
     var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
-    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_mt-" + flipIndex + "_VFAT1.dat";
+    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_flip-" + flipIndex + "_mt-" +  MTIndex + "_MTS.dat";
     that.imageExport.setFileName(exportFileName);
+    RTHLOGGER_WARNING(exportFileName);
+    RTHLOGGER_WARNING("FA:" + keys["mri.FlipAngle"] + "TR:" + keys["mri.RepetitionTime"] + "MT:" + keys["mri.MTState"]);
 
   });
   
